@@ -20,7 +20,7 @@ $insert= "INSERT INTO usuario ( Nomina, Nombre, Email, Password, FechaNacimiento
 		echo "Table insertion failed";
 
 		echo "<script language=\"javascript\">
-		alert(\"Profesor Registrado con exito!\");
-		window.location.href = \"pantallaAgregarProfesor.php\"
+		alert(\"Alumno Registrado con exito!\");
+		window.location.href = \"pantallaAgregarAlumno.php\"
 		</script>";
 		?>

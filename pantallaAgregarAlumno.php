@@ -95,7 +95,7 @@ include "./includes/sesionAdmin.php";
             <div class="container span2 well">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
-                    <h1>Agregar profesor</h1>
+                    <h1>Agregar alumno</h1>
                     <form class="form-horizontal" action='registrarProfesor.php' method="POST">
                       <fieldset>
                         <div id="legend">

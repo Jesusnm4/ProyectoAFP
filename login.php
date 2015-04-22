@@ -42,7 +42,7 @@ if($clave==$password && $usuario!="")
 	$_SESSION['nombre']=$nombre;
 	if($tipo=='P'){
 		echo "<script language=\"javascript\">
-		window.location.href = \"pantallaMenuStaff.php\"
+		window.location.href = \"pantallaIndexProfesor.php\"
 		</script>";
 	}elseif($tipo=='A'){
 		echo "<script language=\"javascript\">

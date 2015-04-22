@@ -76,10 +76,10 @@ include "./includes/sesionAdmin.php";
                     <a href="pantallaEliminarProfesor.php">Eliminar Profesor</a>
                 </li>
                 <li>
-                    <a href="#">Limpiar Base de Datos</a>
+                    <a href="confirmacionBorrarBD.php">Limpiar Base de Datos</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="pantallaContacto.php">Contact</a>
                 </li>
                 <li>
                     <a href="cerrarSesion.php">Cerrar sesión</a>

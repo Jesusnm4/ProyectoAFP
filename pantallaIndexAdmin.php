@@ -51,7 +51,7 @@ include "./includes/sesionAdmin.php";
         <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
+                    <a href="pantallaIndexAdmin.php">
                        AFP
                     </a>
                 </li>
@@ -62,7 +62,7 @@ include "./includes/sesionAdmin.php";
                     <a href="pantallaEliminarProfesor.php">Eliminar Profesor</a>
                 </li>
                 <li>
-                    <a href="#">Limpiar Base de Datos</a>
+                    <a href="confirmacionBorrarBD.php">Limpiar Base de Datos</a>
                 </li>
                 <li>
                     <a href="pantallaContacto.php">Contact</a>

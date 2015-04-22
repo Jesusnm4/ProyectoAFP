@@ -62,20 +62,20 @@ include "./includes/sesionAdmin.php";
                     <a href="pantallaEliminarAlumno.php">Eliminar Alumno</a>
                 </li>
                 <li>
-                    <a href="#">Modificar Alumno</a>
+                    <a href="pantallaModificarAlumno.php">Modificar Alumno</a>
                 </li>
                 <li>
-                    <a href="#">Completar Inducción de Alumnos</a>
+                    <a href="pantallaCompletarInduccion.php">Completar Inducción de Alumnos</a>
                 </li>
                 <li>
                 <li>
-                    <a href="#">Registrar Métricas</a>
+                    <a href="pantallaRegistrarMetricas.php">Registrar Métricas</a>
                 </li>
                 <li>
-                    <a href="#">Calendario Citas</a>
+                    <a href="pantallaCalendarioCitas.php">Calendario Citas</a>
                 </li>
                 <li>
-                    <a href="#">Confirmar Asistencia</a>
+                    <a href="pantallaConfirmarAsistencia.php">Confirmar Asistencia</a>
                 </li>
                 
                 <li>

@@ -1,7 +1,7 @@
 <?php
 
 include "./includes/conexion.php";
-print_r($_POST);
+
 //Variables inicializadas
 if(isset($_POST["matricula"])){
 	$usuario=$_POST["matricula"];

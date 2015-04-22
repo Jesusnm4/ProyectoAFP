@@ -1,4 +1,3 @@
-
 <?php
 
 include "./includes/conexion.php";
@@ -82,11 +81,47 @@ include "./includes/sesionAdmin.php";
                 <span class="hamb-bottom"></span>
             </button>
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                    <h1>¡Bienvenido!</h1>
-                    <p>Esta es la pagina para administrar el sistema de Acondicionamiento Físico Personalizado.</p>
-                    <p>En el menu de la izquiera podrá encontrar acciones para agregar y eliminar profesores así como para limpiar la base de datos.</p>
+                <div class="row">                    
+                    <div class="col-md-6 col-md-offset-3">
+                      <div class="well well-sm">
+                        <form class="form-horizontal" action="" method="post">
+                        <fieldset>
+                          <legend class="text-center">Contanos</legend>
+                  
+                          <!-- Name input-->
+                          <div class="form-group">
+                            <label class="col-md-3 control-label" for="name">Nombre</label>
+                            <div class="col-md-9">
+                              <input id="name" name="name" type="text" placeholder="Tu nombre" class="form-control">
+                            </div>
+                          </div>
+                  
+                          <!-- Email input-->
+                          <div class="form-group">
+                            <label class="col-md-3 control-label" for="email">Tu Email</label>
+                            <div class="col-md-9">
+                              <input id="email" name="email" type="text" placeholder="Tu email" class="form-control">
+                            </div>
+                          </div>
+                  
+                          <!-- Message body -->
+                          <div class="form-group">
+                            <label class="col-md-3 control-label" for="message">Tu mensaje</label>
+                            <div class="col-md-9">
+                              <textarea class="form-control" id="message" name="message" placeholder="Porfavor ingresa tu mensaje aquí..." rows="5"></textarea>
+                            </div>
+                          </div>
+                  
+                          <!-- Form actions -->
+                          <div class="form-group">
+                            <div class="col-md-12 text-right">
+                              <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                            </div>
+                          </div>
+                        </fieldset>
+                        </form>
+                      </div>
+                    </div>
                     </div>
                 </div>
             </div>

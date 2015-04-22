@@ -1,9 +1,17 @@
-
+  
 <?php
 
 include "./includes/conexion.php";
 include "./includes/sesionAdmin.php";
+  
+  $sql="select
+        Nomina,
+        Nombre
+      from
+        usuario
+      where Tipo = 'P'";
 
+  $result = mysql_query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +26,13 @@ include "./includes/sesionAdmin.php";
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="js/bootswatch.js"></script>
   <script type="text/javascript" src="js/sidebar.js"></script>
-  
+  <script>
+    function valida(Nomina){
+      if (confirm("¿Esta seguro?") == true) {
+        window.location.href = "eliminarProfesor.php?nomina="+Nomina;
+      }
+    }
+  </script>
 
 </head>
 <body>
@@ -51,7 +65,7 @@ include "./includes/sesionAdmin.php";
         <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
+                    <a href="pantallaIndexAdmin.php">
                        AFP
                     </a>
                 </li>
@@ -83,18 +97,49 @@ include "./includes/sesionAdmin.php";
             </button>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                    <h1>¡Bienvenido!</h1>
-                    <p>Esta es la pagina para administrar el sistema de Acondicionamiento Físico Personalizado.</p>
-                    <p>En el menu de la izquiera podrá encontrar acciones para agregar y eliminar profesores así como para limpiar la base de datos.</p>
+                    <div class="col-lg-8  ">
+                        <div class="container ">
+                           
+                            <h1 align="center">Eliminar Profesores</h1>
+                            
+                            <div class="panel panel-default">
+                            <table class="table table-striped table-hover ">
+                              <thead>
+                                <tr>
+                                  <th>Nomina</th>
+                                  <th>Nombre</th>
+                                  <th>Eliminar</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                            <?php
+
+                            while($row = mysql_fetch_array($result)){
+                              $Nomina = $row['Nomina'];
+                              $Nombre = $row['Nombre'];
+                              echo "  <tr>
+                                    <td>$Nomina</td>
+                                    <td>$Nombre</td>
+                                    <td><a onclick=\"valida('$Nomina')\" class='btn btn-danger btn-xs'>Baja</a></td>
+                                  </tr>";
+                            }
+                          ?>
+                              </tbody>
+                            </table>
+
+                          </div>
+            
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- /#page-content-wrapper -->
+          </div>
+          <!-- /#page-content-wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
+      </div>
+      <!-- /#wrapper -->
   
 </body>
 </html>
+
+
+  

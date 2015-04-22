@@ -68,7 +68,6 @@ include "./includes/sesionAdmin.php";
                       <a href="pantallaCompletarInduccion.php">Completar Inducción de Alumnos</a>
                   </li>
                   <li>
-                  <li>
                       <a href="pantallaRegistrarMetricas.php">Registrar Métricas</a>
                   </li>
                   <li>

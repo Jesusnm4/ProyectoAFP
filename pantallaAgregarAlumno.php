@@ -46,33 +46,44 @@ include "./includes/sesionAdmin.php";
   <!-- Este div container es para el jumbotron de bienvenida -->
       <div id="wrapper">
         <div class="overlay"></div>
-    
-        <!-- Sidebar -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
-            <ul class="nav sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="pantallaIndexAdmin.php">
-                       AFP
-                    </a>
-                </li>
-                <li>
-                    <a href="pantallaAgregarProfesor.php">Agregar Profesor</a>
-                </li>
-                <li>
-                    <a href="pantallaEliminarProfesor.php">Eliminar Profesor</a>
-                </li>
-                <li>
-                    <a href="confirmacionBorrarBD.php">Limpiar Base de Datos</a>
-                </li>
-                <li>
-                    <a href="pantallaContacto.php">Contact</a>
-                </li>
-                <li>
-                    <a href="cerrarSesion.php">Cerrar sesión</a>
-                </li>
-            </ul>
-        </nav>
-        <!-- /#sidebar-wrapper -->
+
+          <!-- Sidebar -->
+          <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+              <ul class="nav sidebar-nav">
+                  <li class="sidebar-brand">
+                      <a href="pantallaIndexProfesor.php">
+                          AFP
+                      </a>
+                  </li>
+                  <li>
+                      <a href="pantallaAgregarAlumno.php">Agregar Alumno</a>
+                  </li>
+                  <li>
+                      <a href="#">Eliminar Alumno</a>
+                  </li>
+                  <li>
+                      <a href="#">Modificar Alumno</a>
+                  </li>
+                  <li>
+                      <a href="#">Completar Inducción de Alumnos</a>
+                  </li>
+                  <li>
+                  <li>
+                      <a href="#">Registrar Métricas</a>
+                  </li>
+                  <li>
+                      <a href="#">Calendario Citas</a>
+                  </li>
+                  <li>
+                      <a href="#">Confirmar Asistencia</a>
+                  </li>
+
+                  <li>
+                      <a href="cerrarSesion.php">Cerrar sesión</a>
+                  </li>
+              </ul>
+          </nav>
+          <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
@@ -140,12 +151,12 @@ include "./includes/sesionAdmin.php";
 
                             <div class="control-group">
                                 <div class="controls">
-                                    <input type="hidden" id="Tipo" name="Tipo" value='P'>
+                                    <input type="hidden" id="Tipo" name="Tipo" value='E'>
                                 </div>
 
                                 <div class="control-group">
                                     <div class="controls">
-                                        <input type="hidden" id="Tipo" name="Tipo" value='P'>
+                                        <input type="hidden" id="Puede_Cita" name="Puede_Cita" value=0>
                                     </div>
 
 

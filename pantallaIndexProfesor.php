@@ -51,12 +51,12 @@ include "./includes/sesionAdmin.php";
         <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="pantallaIndexAdmin.php">
+                    <a href="pantallaIndexProfesor.php">
                        AFP
                     </a>
                 </li>
                 <li>
-                    <a href="#">Agregar Alumno</a>
+                    <a href="pantallaAgregarAlumno.php">Agregar Alumno</a>
                 </li>
                 <li>
                     <a href="#">Eliminar Alumno</a>

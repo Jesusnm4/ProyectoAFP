@@ -59,7 +59,7 @@ include "./includes/sesionAdmin.php";
                     <a href="pantallaAgregarProfesor.php">Agregar Profesor</a>
                 </li>
                 <li>
-                    <a href="#">Eliminar Profesor</a>
+                    <a href="pantallaEliminarProfesor.php">Eliminar Profesor</a>
                 </li>
                 <li>
                     <a href="#">Limpiar Base de Datos</a>
@@ -81,11 +81,11 @@ include "./includes/sesionAdmin.php";
                 <span class="hamb-middle"></span>
                 <span class="hamb-bottom"></span>
             </button>
-            <div class="container">
+            <div class="container span2 well">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                     <h1>Agregar profesor</h1>
-                    <form class="form-horizontal" action='' method="POST">
+                    <form class="form-horizontal" action='registrarProfesor.php' method="POST">
                       <fieldset>
                         <div id="legend">
                           <legend class="">Favor de llenar los datos</legend>
@@ -137,6 +137,11 @@ include "./includes/sesionAdmin.php";
                           <div class="controls">
                             <input type="text" id="fechaNacimiento" name="fechaNacimiento" placeholder="aaaa-mm-dd" class="input-xlarge">
                        </div>
+
+                            <div class="control-group">
+                                <div class="controls">
+                                    <input type="hidden" id="Tipo" name="Tipo" value='P'>
+                                </div>
 
                         <br>
               

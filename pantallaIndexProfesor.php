@@ -62,7 +62,7 @@ include "./includes/sesionAdmin.php";
                     <a href="pantallaEliminarAlumno.php">Eliminar Alumno</a>
                 </li>
                 <li>
-                    <a href="pantallaModificarAlumno.php">Modificar Alumno</a>
+                    <a href="pantallaTablaModificarAlumnos.php">Modificar Alumno</a>
                 </li>
                 <li>
                     <a href="pantallaCompletarInduccion.php">Completar Inducción de Alumnos</a>

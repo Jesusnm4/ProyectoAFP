@@ -14,6 +14,7 @@ $sql="select
 Nomina,
 Nombre,
 Email,
+Password,
 FechaNacimiento
 from
 usuario
@@ -25,6 +26,7 @@ while($row = mysql_fetch_array($result)){
   $Nomina = $row['Nomina'];
   $Nombre = $row['Nombre'];
   $FechaNacimiento=$row['FechaNacimiento'];
+  $Password=$row['Password'];
   $Email = $row['Email'];
 }
 
@@ -87,7 +89,7 @@ while($row = mysql_fetch_array($result)){
         <a href="pantallaEliminarAlumno.php">Eliminar Alumno</a>
       </li>
       <li>
-        <a href="pantallaModificarAlumno.php">Modificar Alumno</a>
+          <a href="pantallaTablaModificarAlumnos.php">Modificar Alumno</a>
       </li>
       <li>
         <a href="pantallaCompletarInduccion.php">Completar Inducción de Alumnos</a>
@@ -130,6 +132,14 @@ while($row = mysql_fetch_array($result)){
                     <input type="hidden" class="input-xlarge"  name="matriculaVieja" placeholder="Nombre" value="<?=$Nomina ?>" >
                   </div>
               </div>
+
+                <!-- password vieja del alumno -->
+                <div class="control-group" align="center">
+
+                    <div class="controls">
+                        <input type="hidden" class="input-xlarge"  name="passwordVieja" placeholder="Nombre" value="<?=$Password ?>" >
+                    </div>
+                </div>
 
 
               <!-- matricula del alumno -->
@@ -178,6 +188,8 @@ while($row = mysql_fetch_array($result)){
                   <input type="text" class="input-xlarge" id="fechaNacimiento" name="fechaNacimiento" placeholder="aaaa-mm-dd" value="<?=$FechaNacimiento ?>">
                 </div>
               </div>
+                <br>
+                <small><center>*Si se dejan en blanco los campos de contraseña se queda la anterior.</center></small>
               <!-- Botones de submit -->
               <div class="control-group" align="center">
                 <br>

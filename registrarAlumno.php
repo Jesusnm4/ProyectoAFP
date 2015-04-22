@@ -12,7 +12,7 @@ $Puede_Cita= $_POST["Puede_Cita"];
 
 $insert= "INSERT INTO usuario ( Nomina, Nombre, Email, Password, FechaNacimiento, Tipo, Puede_Cita)
 	VALUES
-	('$nomina', '$nombre', '$email', '$password', '$fechaNacimiento', '$Tipo', '$Puede_Cita') ";
+	('$nomina', '$nombre', '$email', '$password', '$fechaNacimiento', '$Tipo', $Puede_Cita) ";
 
 		mysql_real_escape_string($insert);
 

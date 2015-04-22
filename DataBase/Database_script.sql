@@ -46,13 +46,14 @@ CREATE TABLE `medicion_alumno` (
 CREATE TABLE `registro_diario` (
   `Matricula` varchar(11) NOT NULL PRIMARY KEY,
   `Fecha` date NOT NULL,
+  `Num_Series` int ,
   `Distancia` Float(6),
   `Tiempo` TIME ,
   `Pulsacion` int ,
   `Pulsacion_1` int,
   `Pulsacion_3` int,
   `Borg` int,
-  `Tipo` tinyint(1) NOT NULL,
+  `Tipo` char(1),
   FOREIGN KEY (Matricula) REFERENCES usuario(Nomina)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 -- --------------------------------------------------------

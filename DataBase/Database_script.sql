@@ -21,7 +21,8 @@ CREATE TABLE `usuario` (
   `Email` varchar(30) NOT NULL,
   `Password` varchar(15) NOT NULL,
   `FechaNacimiento` date NOT NULL,
-  `Tipo` char(1) NOT NULL
+  `Tipo` char(1) NOT NULL,
+  `Puede_Cita` tinyint(1)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 -- ----------------------------------------------------------
 --

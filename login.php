@@ -1,7 +1,7 @@
 <?php
 
 include "./includes/conexion.php";
-
+print_r($_POST);
 //Variables inicializadas
 if(isset($_POST["matricula"])){
 	$usuario=$_POST["matricula"];
@@ -20,10 +20,11 @@ $tipo="";
 $nombre="";
 
 
+$sql="select * from usuario where Nomina='".$usuario."';";
 
-$sql="select * from usuario where Nomina='".$usuario."'";
-
+$result = "a";
 $result = mysql_query($sql);
+
 while($row = mysql_fetch_array($result)){
 	$tipo=$row['Tipo'];
 	$password=$row['Password'];

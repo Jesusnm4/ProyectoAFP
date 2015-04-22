@@ -30,17 +30,16 @@ include "./includes/sesionAdmin.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css" media="screen">
   <link rel="stylesheet" href="css/sidebar.css" media="screen">
-  <link rel="javascript" href="javascript/sidebar.js" media="screen">
-  <script>
-  function valida(){
-    if (confirm("¿Esta seguro? si acepta se borraran todas las inscripciones a cursos como tambien los pagos (no se borran cursos, usuarios ni alumnos)") == true) {
-      window.location.href = "borrarBaseDatos.php";
-    }
-  }
-  </script>
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/bootswatch.js"></script>
+  <script type="text/javascript" src="js/sidebar.js"></script>
+  
+
 </head>
 <body>
   <!-- Este div container es para la navigation bar de arriba -->
+
 
   <div class="navbar navbar-default">
     <div class="navbar-header">
@@ -59,6 +58,8 @@ include "./includes/sesionAdmin.php";
       </ul>
     </div>
   </div>
+
+
 
   <!-- Este div container es para el jumbotron de bienvenida -->
       <div id="wrapper">
@@ -112,8 +113,8 @@ include "./includes/sesionAdmin.php";
         <div id="page-content-wrapper">
             <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
                 <span class="hamb-top"></span>
-          <span class="hamb-middle"></span>
-        <span class="hamb-bottom"></span>
+                <span class="hamb-middle"></span>
+                <span class="hamb-bottom"></span>
             </button>
             <div class="container">
                 <div class="row">
@@ -132,8 +133,6 @@ include "./includes/sesionAdmin.php";
 
     </div>
     <!-- /#wrapper -->
-  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/bootswatch.js"></script>
+  
 </body>
 </html>

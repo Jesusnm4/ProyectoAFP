@@ -54,7 +54,7 @@ $date = date('Y-m-d');
   <!-- Este div container es para el jumbotron de bienvenida -->
   <div id="wrapper">
     <div class="overlay"></div>
-    
+
     <!-- Sidebar -->
     <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
       <ul class="nav sidebar-nav">

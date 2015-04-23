@@ -78,5 +78,5 @@ INSERT INTO `usuario` (`Nomina`, `Nombre`, `Password`, `Tipo`) VALUES
 ('PROFE', 'Profesor', 'profeAFP', 'P');
 
 INSERT INTO `usuario` (`Nomina`, `Nombre`, `Password`, `Tipo`,`Profesor`,`Puede_Cita`) VALUES
-('ESTUDIANTE', 'Estudiante', 'estudianteAFP', 'E', 'ADMIN', 0);
+('ESTUDIANTE', 'Estudiante', 'estudianteAFP', 'E', 'PROFE', 0);
 

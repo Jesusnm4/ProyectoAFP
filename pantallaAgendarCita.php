@@ -1,3 +1,4 @@
+
 <?php
 
 include "./includes/conexion.php";
@@ -9,8 +10,7 @@ if (isset($_SESSION['nomina'])) {
 
 $sql2="select
                                                         Profesor,
-                                                        Puede_Cita,
-                                                        Cita_Disponible
+                                                        Puede_Cita
                                                       from
                                                         usuario
                                                       where Nomina = '$nomina'";
@@ -20,7 +20,7 @@ $result2 = mysql_query($sql2);
 $row = mysql_fetch_array($result2);
 $nomina_profe= $row['Profesor'];
 $puede_cita= $row['Puede_Cita'];
-$cita_disponible= $row['Cita_Disponible'];
+
 $count = 0;
 
 //for para llenar los 10 dias habiles de los profesores, se excluyen sabdado y domingo en el if.
@@ -49,14 +49,9 @@ for( $i=0;$i<15;$i++){
   <script>
     function valida(fecha, hora){
       if(<?php echo $puede_cita; ?> == 1){
-            if(<?php echo $cita_disponible; ?> == 1)
-            {
-                if (confirm("¿Esta seguro?") == true) {
-                    window.location.href = "agendarCita.php?Fecha=" + fecha + "&Hora=" + hora;
-                }
-            }else{
-                alert("No tienes citas disponibles.");
-            }
+        if (confirm("¿Esta seguro?") == true) {
+        window.location.href = "agendarCita.php?Fecha="+fecha+"&Hora="+hora;
+        }
       }else{
         alert("No se pueden hacer citas hasta que se complete la induccion.");
       }
@@ -94,7 +89,7 @@ for( $i=0;$i<15;$i++){
           <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
               <ul class="nav sidebar-nav">
                   <li class="sidebar-brand">
-                      <a href="pantallaIndexEstudiante.php">
+                      <a href="pantallaIndexAdmin.php">
                           AFP
                       </a>
                   </li>
@@ -141,7 +136,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[0]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[0]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time" style="padding-top: 17px;">
+                                      <td class="agenda-time" style="padding-top:18px; padding-bottom: 18px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -153,13 +148,13 @@ for( $i=0;$i<15;$i++){
                                           12:00 PM
                                           <hr>
                                           12:30 PM
-                                         <hr>
+                                          <hr>
                                           1:00 PM
                                           <hr>
                                           1:30 PM
                                       </td>
                                       <td class="agenda-events">
-                                          <div class="agenda-event">
+                                          <div class="agenda-event" style="padding-top:15px; padding-bottom: 15px;">
                                               <i class="text-muted" title="Repeating event"></i> 
                                               <?php
                                                 $matricula="";
@@ -183,7 +178,7 @@ for( $i=0;$i<15;$i++){
                                                 $matricula= $row['matricula'];
                                                 $idagenda =  $row['idagenda'];
                                                 if($matricula == ""){
-                                                    echo "<a onclick=\"valida('$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
+                                                    echo "<a \"onclick=\"valida('$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                    echo " <B>HORARIO OCUPADO</B>";
                                                 }
@@ -419,7 +414,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[1]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[1]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time" style="padding-top: 17px;">
+                                      <td class="agenda-time">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -696,7 +691,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[2]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[2]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time" style="padding-top: 17px;">
+                                      <td class="agenda-time">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -973,7 +968,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[3]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[3]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time" style="padding-top: 17px;">
+                                      <td class="agenda-time">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -1250,7 +1245,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[4]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[4]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time" style="padding-top: 17px;">
+                                      <td class="agenda-time">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -1527,7 +1522,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[5]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[5]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time" style="padding-top: 17px;">
+                                      <td class="agenda-time">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -1804,7 +1799,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[6]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[6]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time" style="padding-top: 17px;">
+                                      <td class="agenda-time">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -2081,7 +2076,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[7]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[7]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time" style="padding-top: 17px;">
+                                      <td class="agenda-time">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -2358,7 +2353,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[8]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[8]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time" style="padding-top: 17px;">
+                                      <td class="agenda-time">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -2635,7 +2630,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[9]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[9]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time" style="padding-top: 17px;">
+                                      <td class="agenda-time">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -2912,7 +2907,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[10]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[10]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time" style="padding-top: 17px;">
+                                      <td class="agenda-time">
                                           10:00 AM
                                           <hr>
                                           10:30 AM

@@ -24,8 +24,13 @@
 }
 
 
+
 /* Times */
-.agenda .agenda-time { width: 140px; } 
+.agenda .agenda-time { 
+	width: 140px; 
+	font-size: 150%;
+
+} 
 
 
 /* Events */
@@ -40,6 +45,11 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+}
+
+hr {
+  padding-top:0px;
+  padding-bottom:0px;
 }
 
 body {

@@ -93,6 +93,9 @@ include "./includes/sesionAdmin.php";
                       <a href="pantallaTablaRegistrarMetricas.php">Registrar Métricas</a>
                   </li>
                   <li>
+                    <a href="pantallaTablaRevisarMetricas.php">Revisar Métricas</a>
+                  </li>
+                  <li>
                       <a href="pantallaCalendarioCitas.php">Calendario Citas</a>
                   </li>
                   <li>

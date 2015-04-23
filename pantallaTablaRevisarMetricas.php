@@ -91,6 +91,9 @@ include "./includes/sesionStaff.php";
                     <a href="pantallaTablaRegistrarMetricas.php">Revisar Métricas</a>
                 </li>
                 <li>
+                    <a href="pantallaTablaRevisarMetricas.php">Revisar Métricas</a>
+                </li>
+                <li>
                     <a href="pantallaCalendarioCitas.php">Calendario Citas</a>
                 </li>
                 <li>

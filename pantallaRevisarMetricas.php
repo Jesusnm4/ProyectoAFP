@@ -2,24 +2,7 @@
 <?php
 
 include "./includes/conexion.php";
-include "./includes/sesionStaff.php";
-
-
-  $Nomina="";
-  if(isset($_GET['nomina'])){
-    $Nomina=$_GET['nomina'];
-  }
-
-  $sql="select
-      Nomina,
-      Nombre,
-      Email,
-      FechaNacimiento
-    from
-      usuario
-    where Tipo = 'E'";
-
-  $result = mysql_query($sql);
+include "./includes/sesionAdmin.php";
 
 ?>
 
@@ -112,39 +95,13 @@ include "./includes/sesionStaff.php";
                 <span class="hamb-bottom"></span>
             </button>
             <div class="container">
-                <h1 align="center">Modificar Alumnos</h1>
-                <table class="table table-striped table-hover ">
-                  <thead>
-                    <tr>
-                      <th>Nomina</th>
-                      <th>Nombre</th>
-                      <th>Email</th>
-                      <th>Fecha de Nacimiento</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php
-
-                    while($row = mysql_fetch_array($result)){
-                      $Nomina=$row['Nomina'];
-                      $Nombre=$row['Nombre'];
-                      $Email=$row['Email'];
-                      $FechaNacimiento=$row['FechaNacimiento'];
-
-
-
-                      echo "  <tr id=\"". $Nomina ."\">
-                      <td>$Nomina</td>
-                      <td>$Nombre</td>
-                      <td>$Email</td>
-                      <td>$FechaNacimiento</td>
-                      <td><a href='pantallaModificarAlumno.php?Nomina=$Nomina' class='btn btn-success btn-xs'>Modificar Datos</a></td>
-                      </tr>";
-                    }
-                    ?>
-
-                  </tbody>
-                </table>
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                    <h1>Revisar metricas</h1>
+                    <p>Esta es la pagina para administrar el sistema de Acondicionamiento Físico Personalizado.</p>
+                    <p>En el menu de la izquiera podrá encontrar acciones para agregar y eliminar profesores así como para limpiar la base de datos.</p>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- /#page-content-wrapper -->

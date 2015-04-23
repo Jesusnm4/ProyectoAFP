@@ -171,6 +171,11 @@ if (isset($_SESSION['nomina'])) {
                                             <input type="hidden" id="profesor" name="profesor" value=<?=$nomina_profe ?>>
                                         </div>
 
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <input type="hidden" id="Cita_Disponible" name="Cita_Disponible" value=1>
+                                        </div>
+
 
                         <br>
               

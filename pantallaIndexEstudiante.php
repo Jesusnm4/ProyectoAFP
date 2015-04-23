@@ -59,13 +59,7 @@ include "./includes/sesionEstudiante.php";
                     <a href="pantallaAgendarCita.php">Agendar Cita</a>
                 </li>
                 <li>
-                    <a href="pantallaEliminarProfesor.php">Eliminar Profesor</a>
-                </li>
-                <li>
-                    <a href="confirmacionBorrarBD.php">Limpiar Base de Datos</a>
-                </li>
-                <li>
-                    <a href="pantallaContacto.php">Contact</a>
+                    <a href="pantallaRegistroDiario.php">Registrar Ejercicio</a>
                 </li>
                 <li>
                     <a href="cerrarSesion.php">Cerrar sesión</a>

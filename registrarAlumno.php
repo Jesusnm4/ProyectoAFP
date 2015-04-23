@@ -13,9 +13,9 @@ $Tipo= $_POST["Tipo"];
 $Puede_Cita= $_POST["Puede_Cita"];
 $profesor= $_POST["profesor"];
 
-$insert= "INSERT INTO usuario ( Nomina, Nombre, Email, Password, FechaNacimiento, Tipo, Puede_Cita, Profesor)
+$insert= "INSERT INTO usuario ( Nomina, Nombre, Email, Password, FechaNacimiento, Tipo, Puede_Cita, Profesor, Cita_Disponible)
 	VALUES
-	('$nomina', '$nombre', '$email', '$password', '$fechaNacimiento', '$Tipo', $Puede_Cita, '$profesor') ";
+	('$nomina', '$nombre', '$email', '$password', '$fechaNacimiento', '$Tipo', $Puede_Cita, '$profesor',1) ";
 
 		mysql_real_escape_string($insert);
 

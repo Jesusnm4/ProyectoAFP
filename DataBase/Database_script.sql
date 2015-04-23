@@ -23,6 +23,7 @@ CREATE TABLE `usuario` (
   `FechaNacimiento` date NOT NULL,
   `Tipo` char(1) NOT NULL,
   `Puede_Cita` tinyint(1),
+  `Cita_Disponible` tinyint(1),
   `Profesor` varchar(15)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 -- ----------------------------------------------------------

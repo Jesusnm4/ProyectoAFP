@@ -149,6 +149,8 @@ for( $i=0;$i<15;$i++){
                                           12:30 PM
                                           <hr>
                                           1:00 PM
+                                          <hr>
+                                          1:30 PM
                                       </td>
                                       <td class="agenda-events">
                                           <div class="agenda-event">
@@ -190,6 +192,8 @@ for( $i=0;$i<15;$i++){
                                               A
                                               <hr>
                                               A
+                                              <hr>
+                                              A
                                           </div>
                                       </td>
                                   </tr>
@@ -214,10 +218,14 @@ for( $i=0;$i<15;$i++){
                                           12:30 PM
                                           <hr>
                                           1:00 PM
+                                          <hr>
+                                          1:30 PM
                                       </td>
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
+                                              A
+                                              <hr>
                                               A
                                               <hr>
                                               A
@@ -255,10 +263,14 @@ for( $i=0;$i<15;$i++){
                                           12:30 PM
                                           <hr>
                                           1:00 PM
+                                          <hr>
+                                          1:30 PM
                                       </td>
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
+                                              A
+                                              <hr>
                                               A
                                               <hr>
                                               A
@@ -296,10 +308,14 @@ for( $i=0;$i<15;$i++){
                                           12:30 PM
                                           <hr>
                                           1:00 PM
+                                          <hr>
+                                          1:30 PM
                                       </td>
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
+                                              A
+                                              <hr>
                                               A
                                               <hr>
                                               A
@@ -337,10 +353,14 @@ for( $i=0;$i<15;$i++){
                                           12:30 PM
                                           <hr>
                                           1:00 PM
+                                          <hr>
+                                          1:30 PM
                                       </td>
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
+                                              A
+                                              <hr>
                                               A
                                               <hr>
                                               A
@@ -378,10 +398,14 @@ for( $i=0;$i<15;$i++){
                                           12:30 PM
                                           <hr>
                                           1:00 PM
+                                          <hr>
+                                          1:30 PM
                                       </td>
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
+                                              A
+                                              <hr>
                                               A
                                               <hr>
                                               A
@@ -419,10 +443,14 @@ for( $i=0;$i<15;$i++){
                                           12:30 PM
                                           <hr>
                                           1:00 PM
+                                          <hr>
+                                          1:30 PM
                                       </td>
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
+                                              A
+                                              <hr>
                                               A
                                               <hr>
                                               A
@@ -460,10 +488,14 @@ for( $i=0;$i<15;$i++){
                                           12:30 PM
                                           <hr>
                                           1:00 PM
+                                          <hr>
+                                          1:30 PM
                                       </td>
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
+                                              A
+                                              <hr>
                                               A
                                               <hr>
                                               A
@@ -501,10 +533,14 @@ for( $i=0;$i<15;$i++){
                                           12:30 PM
                                           <hr>
                                           1:00 PM
+                                          <hr>
+                                          1:30 PM
                                       </td>
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
+                                              A
+                                              <hr>
                                               A
                                               <hr>
                                               A
@@ -542,10 +578,14 @@ for( $i=0;$i<15;$i++){
                                           12:30 PM
                                           <hr>
                                           1:00 PM
+                                          <hr>
+                                          1:30 PM
                                       </td>
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
+                                              A
+                                              <hr>
                                               A
                                               <hr>
                                               A
@@ -583,10 +623,14 @@ for( $i=0;$i<15;$i++){
                                           12:30 PM
                                           <hr>
                                           1:00 PM
+                                          <hr>
+                                          1:30 PM
                                       </td>
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
+                                              A
+                                              <hr>
                                               A
                                               <hr>
                                               A

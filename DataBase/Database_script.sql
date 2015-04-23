@@ -34,7 +34,8 @@ CREATE TABLE `usuario` (
 --
 
 CREATE TABLE `medicion_alumno` (
-  `Matricula` varchar(15) NOT NULL PRIMARY KEY,
+  `IdMedicion` varchar(15) NOT NULL PRIMARY KEY,
+  `Matricula` varchar(15) NOT NULL,
   `Fecha` date NOT NULL,
   `Estatura` int(3) NOT NULL,
   `Peso` Float(6) NOT NULL,
@@ -45,7 +46,8 @@ CREATE TABLE `medicion_alumno` (
 
 -- ----------------------------------------------------------
 CREATE TABLE `registro_diario` (
-  `Matricula` varchar(15) NOT NULL PRIMARY KEY,
+  `IdRegistro` varchar(15) NOT NULL PRIMARY KEY,
+  `Matricula` varchar(15) NOT NULL,
   `Fecha` date NOT NULL,
   `Num_Series` int ,
   `Distancia` Float(6),

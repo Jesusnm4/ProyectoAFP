@@ -3,7 +3,7 @@
 Session_start();
 
 if(isset($_SESSION['nomina'])){
-	if($_SESSION['tipo'] =! 'A'){
+	if($_SESSION['tipo'] != 'E'){
 		echo "<script language=\"javascript\">
 		alert(\"No tiene permisos!\");
 		window.location.href = \"index.html\"

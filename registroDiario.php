@@ -3,10 +3,13 @@
 include "./includes/conexion.php";
 include "./includes/sesionEstudiante.php";
 
-
-$tipo= $_POST["Tipo"];
+$tipo="";
+if(isset($_POST["tipo"])){
+    $tipo= $_POST["tipo"];
+}
+echo $tipo;
 $insert="";
-if($tipo=="C"){
+if($tipo=='C'){
     $date= $_POST["date"];
     $matricula= $_POST["matricula"];
     $distancia= $_POST["distancia"];
@@ -17,7 +20,8 @@ if($tipo=="C"){
     $insert= "INSERT INTO registro_diario ( Matricula, Fecha, Distancia, Tiempo, Pulsacion_1, Pulsacion_3, Borg, Tipo)
             VALUES
             ('$matricula', '$date', $distancia, '$tiempo', $puls1, $puls3, $BORG, '$tipo') ";
-}elseif($tipo=="M"){
+    echo $insert;
+}elseif($tipo=='M'){
     $date= $_POST["date"];
     $matricula= $_POST["matricula"];
     $series= $_POST["series"];
@@ -29,7 +33,8 @@ if($tipo=="C"){
     $insert= "INSERT INTO registro_diario ( Matricula, Fecha, Num_Series, Distancia, Tiempo, Pulsacion_1, Pulsacion_3, Borg, Tipo)
             VALUES
             ('$matricula', '$date', $series, $distancia, '$tiempo', $puls1, $puls3, $BORG, '$tipo') ";
-}elseif($tipo=="F"){
+    echo $insert;
+}elseif($tipo=='F'){
     $date= $_POST["date"];
     $matricula= $_POST["matricula"];
     $series= $_POST["series"];
@@ -37,6 +42,7 @@ if($tipo=="C"){
     $insert= "INSERT INTO registro_diario ( Matricula, Fecha, Num_Series, Borg, Tipo)
             VALUES
             ('$matricula', '$date', $series, $BORG, '$tipo') ";
+    echo $insert;
 }
 
 		mysql_real_escape_string($insert);

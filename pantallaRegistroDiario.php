@@ -126,9 +126,9 @@ $( "#datepicker" ).datepicker();
                              <label for="Tipo" class="control-label">Tipo de Ejercicio</label>
                              <br>
                              <select name="Tipo">
-                                 <option value="C">Cardio</option>
-                                 <option value="M">Mixto</option>
-                                 <option value="F">Fuerza</option>
+                                 <option value='C'>Cardio</option>
+                                 <option value='M'>Mixto</option>
+                                 <option value='F'>Fuerza</option>
                              </select>
                          </div>
                          <br>
@@ -138,7 +138,7 @@ $( "#datepicker" ).datepicker();
                           <?php 
                             if(isset($_GET["Tipo"])){
                                 $tipo=$_GET["Tipo"];
-                                if($tipo=="M") {
+                                if($tipo=='M') {
                                     echo "<!-- Fecha actual -->
                                       <form action=\"registroDiario.php\" method=\"post\">
                                       <div class=\"control-group\" align=\"center\">
@@ -217,7 +217,7 @@ $( "#datepicker" ).datepicker();
                                                 <br><br>
                                                 <input type=\"submit\" value=\"Submit\">
                                             </div></form>";
-                                }elseif($tipo=="C"){
+                                }elseif($tipo=='C'){
                                     echo "<!-- Fecha actual -->
                                     <form action=\"registroDiario.php\" method=\"post\">
                                       <div class=\"control-group\" align=\"center\">
@@ -290,7 +290,7 @@ $( "#datepicker" ).datepicker();
                                                 <br><br>
                                                 <input type=\"submit\" value=\"Submit\">
                                             </div></form>";
-                                }elseif($tipo=="F"){
+                                }elseif($tipo=='F'){
                                     echo "<!-- Fecha actual -->
                                     <form action=\"registroDiario.php\" method=\"post\">
                                       <div class=\"control-group\" align=\"center\">

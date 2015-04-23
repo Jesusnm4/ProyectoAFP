@@ -4,13 +4,10 @@
 include "./includes/conexion.php";
 include "./includes/sesionEstudiante.php";
 
-$Matricula_alumno="";
-if(isset($_GET['Nomina'])){
-  $Matricula_alumno = $_GET['Nomina'];
-}
+
 $Nomina="";
-if(isset($_GET['Nomina'])){
-    $Nomina=$_GET['Nomina'];
+if(isset($_SESSION['nomina'])){
+    $Nomina=$_SESSION['nomina'];
 }
 
 $date = date('Y-m-d');
@@ -144,7 +141,7 @@ $( "#datepicker" ).datepicker();
                                       <div class=\"control-group\" align=\"center\">
 
                                           <div class=\"controls\">
-                                            <input type=\"hidden\" class=\"input-xlarge\"  name=\"date\" placeholder=\"Date\" value=\"<?=$date ?>\" >
+                                            <input type=\"hidden\" class=\"input-xlarge\"  name=\"date\" placeholder=\"Date\" value=\"$date\" >
                                           </div>
                                       </div>
 
@@ -152,14 +149,14 @@ $( "#datepicker" ).datepicker();
                                       <!-- matricula del alumno -->
                                       <div class=\"control-group\" align=\"center\">
                                           <div class=\"controls\">
-                                            <input type=\"hidden\" class=\"input-xlarge\" id=\"matricula\" name=\"matricula\" placeholder=\"Matricula\" value=\"<?=$Nomina ?>\" >
+                                            <input type=\"hidden\" class=\"input-xlarge\" id=\"matricula\" name=\"matricula\" placeholder=\"Matricula\" value=\"$Nomina \" >
                                           </div>
                                       </div>
 
                                     <!-- tipo -->
                                       <div class=\"control-group\" align=\"center\">
                                           <div class=\"controls\">
-                                            <input type=\"hidden\" class=\"input-xlarge\" id=\"tipo\" name=\"tipo\" placeholder=\"Tipo\" value=\"<?=$tipo ?>\" >
+                                            <input type=\"hidden\" class=\"input-xlarge\" id=\"tipo\" name=\"tipo\" placeholder=\"Tipo\" value=\"$tipo\" >
                                           </div>
                                       </div>
 
@@ -223,7 +220,7 @@ $( "#datepicker" ).datepicker();
                                       <div class=\"control-group\" align=\"center\">
 
                                           <div class=\"controls\">
-                                            <input type=\"hidden\" class=\"input-xlarge\"  name=\"date\" placeholder=\"Date\" value=\"<?=$date ?>\" >
+                                            <input type=\"hidden\" class=\"input-xlarge\"  name=\"date\" placeholder=\"Date\" value=\"$date \" >
                                           </div>
                                       </div>
 
@@ -231,14 +228,14 @@ $( "#datepicker" ).datepicker();
                                       <!-- matricula del alumno -->
                                       <div class=\"control-group\" align=\"center\">
                                           <div class=\"controls\">
-                                            <input type=\"hidden\" class=\"input-xlarge\" id=\"matricula\" name=\"matricula\" placeholder=\"Matricula\" value=\"<?=$Nomina ?>\" >
+                                            <input type=\"hidden\" class=\"input-xlarge\" id=\"matricula\" name=\"matricula\" placeholder=\"Matricula\" value=\"$Nomina\" >
                                           </div>
                                       </div>
 
                                     <!-- tipo -->
                                       <div class=\"control-group\" align=\"center\">
                                           <div class=\"controls\">
-                                            <input type=\"hidden\" class=\"input-xlarge\" id=\"tipo\" name=\"tipo\" placeholder=\"Tipo\" value=\"<?=$tipo ?>\" >
+                                            <input type=\"hidden\" class=\"input-xlarge\" id=\"tipo\" name=\"tipo\" placeholder=\"Tipo\" value=\"$tipo\" >
                                           </div>
                                       </div>
 
@@ -296,7 +293,7 @@ $( "#datepicker" ).datepicker();
                                       <div class=\"control-group\" align=\"center\">
 
                                           <div class=\"controls\">
-                                            <input type=\"hidden\" class=\"input-xlarge\"  name=\"date\" placeholder=\"Date\" value=\"<?=$date ?>\" >
+                                            <input type=\"hidden\" class=\"input-xlarge\"  name=\"date\" placeholder=\"Date\" value=\"$date\" >
                                           </div>
                                       </div>
 
@@ -304,14 +301,14 @@ $( "#datepicker" ).datepicker();
                                       <!-- matricula del alumno -->
                                       <div class=\"control-group\" align=\"center\">
                                           <div class=\"controls\">
-                                            <input type=\"hidden\" class=\"input-xlarge\" id=\"matricula\" name=\"matricula\" placeholder=\"Matricula\" value=\"<?=$Nomina ?>\" >
+                                            <input type=\"hidden\" class=\"input-xlarge\" id=\"matricula\" name=\"matricula\" placeholder=\"Matricula\" value=\"$Nomina\" >
                                           </div>
                                       </div>
 
                                     <!-- tipo -->
                                       <div class=\"control-group\" align=\"center\">
                                           <div class=\"controls\">
-                                            <input type=\"hidden\" class=\"input-xlarge\" id=\"tipo\" name=\"tipo\" placeholder=\"Tipo\" value=\"<?=$tipo ?>\" >
+                                            <input type=\"hidden\" class=\"input-xlarge\" id=\"tipo\" name=\"tipo\" placeholder=\"Tipo\" value=\"$tipo\" >
                                           </div>
                                       </div>
 

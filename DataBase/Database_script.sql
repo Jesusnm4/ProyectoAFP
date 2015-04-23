@@ -53,7 +53,6 @@ CREATE TABLE `registro_diario` (
   `Num_Series` int ,
   `Distancia` Float(6),
   `Tiempo` TIME ,
-  `Pulsacion` int ,
   `Pulsacion_1` int,
   `Pulsacion_3` int,
   `Borg` int,
@@ -78,6 +77,11 @@ INSERT INTO `usuario` (`Nomina`, `Nombre`, `Password`, `Tipo`) VALUES
 INSERT INTO `usuario` (`Nomina`, `Nombre`, `Password`, `Tipo`) VALUES
 ('PROFE', 'Profesor', 'profeAFP', 'P');
 
-INSERT INTO `usuario` (`Nomina`, `Nombre`, `Password`, `Tipo`,`Profesor`,`Puede_Cita`) VALUES
-('ESTUDIANTE', 'Estudiante', 'estudianteAFP', 'E', 'PROFE', 0);
+INSERT INTO `usuario` (`Nomina`, `Nombre`, `Password`, `Tipo`,`Profesor`,`Puede_Cita`,`Cita_Disponible`) VALUES
+('ESTUDIANTE', 'Estudiante', 'estudianteAFP', 'E', 'PROFE', 0, 1);
+
+CREATE EVENT AutoDeleteOldNotifications
+ON SCHEDULE AT CURRENT_TIMESTAMP + INTERVAL 14 DAY
+DO
+DELETE LOW_PRIORITY FROM afp.agenda WHERE Fecha < DATE_SUB(NOW(), INTERVAL 14 DAY)
 

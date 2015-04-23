@@ -4,27 +4,28 @@
 include "./includes/conexion.php";
 include "./includes/sesionStaff.php";
 
-if(isset($_GET['nomina'])){
-  $Matricula_alumno = $_GET['nomina'];
+if(isset($_GET['Nomina'])){
+  $Matricula_alumno = $_GET['Nomina'];
 }
 
 $sql="select
     Matricula as matricula,
     Nombre as nombre,
+    Email as email,
     Estatura as estatura,
     Peso as peso,
     PorcentajeGrasa as porcentajeGrasa,
     IMC as imc
   from
     medicion_alumno,usuario
-  where Matricula = '$Matricula_alumno' ";
+  where Matricula = '$Matricula_alumno' and Nomina=Matricula";
 
 
 $result = mysql_query($sql);
 if($result === FALSE) {
   die(mysql_error()); // TODO: better error handling
 }
-$row = mysql_fetch_array($result);
+
 
 
 ?>
@@ -41,7 +42,15 @@ $row = mysql_fetch_array($result);
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="js/bootswatch.js"></script>
   <script type="text/javascript" src="js/sidebar.js"></script>
-  
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+$(function() {
+$( "#datepicker" ).datepicker();
+});
+</script>
 
 </head>
 <body>
@@ -117,15 +126,16 @@ $row = mysql_fetch_array($result);
                 <span class="hamb-middle"></span>
                 <span class="hamb-bottom"></span>
             </button>
-            <div class="container">
+            <div class="container ">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                     <h1>Revisar metricas</h1>
-                    <table class="table table-striped table-hover ">
+                    <table class="table table-striped table-hover  span2 well ">
                         <thead>
                           <tr>
                             <th>Matricula</th>
                             <th>Nombre</th>
+                            <th>Email</th>
                             <th>Estatura</th>
                             <th>Peso</th>
                             <th>Porcentaje Grasa</th>
@@ -135,21 +145,21 @@ $row = mysql_fetch_array($result);
                         <tbody>
                           <?php
 
+                        
                           while($row = mysql_fetch_array($result)){
                             $Matricula=$row['matricula'];
-                            $Nombre=$row['Nombre'];
-                            $Email=$row['Email'];
+                            $Nombre=$row['nombre'];
+                            $Email=$row['email'];
                             $Estatura=$row['estatura'];
                             $Peso=$row['peso'];
                             $PorcentajeGrasa=$row['porcentajeGrasa'];
                             $IMC=$row['imc'];
 
 
-                            echo "  <tr id=\"". $Nomina ."\">
+                            echo "  <tr>
                             <td>$Matricula</td>
                             <td>$Nombre</td>
                             <td>$Email</td>
-                            <td>$Estatura</td>
                             <td>$Estatura</td>
                             <td>$Peso</td>
                             <td>$PorcentajeGrasa</td>
@@ -161,6 +171,78 @@ $row = mysql_fetch_array($result);
 
                         </tbody>
                      </table>
+                     <br><br>
+                     <h4>Seleccione un día para ver el registro de ese día</h4>
+                     <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="get">
+                        <p>Fecha: <input type="text" name="date" id="datepicker"></p><br>
+                        <input type="hidden" name="Nomina" value=<?php echo "$Matricula_alumno"; ?>>
+                        <input class="btn btn-success" type="submit" value="Consultar">
+                    </form><br><br>
+                    
+                          <?php 
+                            if(isset($_GET["date"])){
+                                $date = $_GET["date"];
+                                $arr = explode('/', $date);
+                                $date = $arr[2]."-".$arr[0]."-".$arr[1];
+                                echo "<table class=\"table table-striped table-hover  span2 well \">
+                                      <thead>
+                                        <tr>
+                                          <th>Matricula</th>
+                                          <th>Nombre</th>
+                                          <th>Email</th>
+                                          <th>Estatura</th>
+                                          <th>Peso</th>
+                                          <th>Porcentaje Grasa</th>
+                                          <th>IMC</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>";
+                                
+                                $sql="select
+                                    Matricula as matricula,
+                                    Nombre as nombre,
+                                    Email as email,
+                                    Estatura as estatura,
+                                    Peso as peso,
+                                    PorcentajeGrasa as porcentajeGrasa,
+                                    IMC as imc
+                                  from
+                                    medicion_alumno,usuario
+                                  where Matricula = '$Matricula_alumno' and Nomina=Matricula";
+
+
+                                $result = mysql_query($sql);
+
+
+                                while($row = mysql_fetch_array($result)){
+                                    $Matricula=$row['matricula'];
+                                    $Nombre=$row['nombre'];
+                                    $Email=$row['email'];
+                                    $Estatura=$row['estatura'];
+                                    $Peso=$row['peso'];
+                                    $PorcentajeGrasa=$row['porcentajeGrasa'];
+                                    $IMC=$row['imc'];
+
+
+                                    echo "  <tr>
+                                    <td>$Matricula</td>
+                                    <td>$Nombre</td>
+                                    <td>$Email</td>
+                                    <td>$Estatura</td>
+                                    <td>$Peso</td>
+                                    <td>$PorcentajeGrasa</td>
+                                    <td>$IMC</td>
+                                    
+                                    </tr>";
+                              }
+
+                              echo    "</tbody>
+                                    </table>";
+                            }
+                            ?>
+
+                       
+                     
                     </div>
                 </div>
             </div>

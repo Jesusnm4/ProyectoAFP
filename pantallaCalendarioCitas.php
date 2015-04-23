@@ -155,18 +155,21 @@ for( $i=0;$i<15;$i++){
                                               <i class="text-muted" title="Repeating event"></i> 
                                               <?php 
                                                 $sql="select
-                                                    A.IdAgenda as idagenda,
-                                                    A.Matricula_alumno as matricula,
-                                                    U.Nombre as nombre,
-                                                    A.Fecha as fecha,
-                                                    A.Hora as hora
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
                                                   from
-                                                    agenda A,usuario U
-                                                  where A.Matricula_profe = '$nomina_profe' and A.Fecha = '$actual[0]-$actual[4]-$actual[3]'' 
-                                                  and A.Time = '10:00 AM' and A.Matricula_alumno = U.Nomina ";
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:00 AM' and Matricula_alumno = Nomina ";
 
 
                                                 $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
                                                 $row = mysql_fetch_array($result);
                                                 $idagenda =  $row['idagenda'];
                                                 echo "<I>".$row['matricula']." ".$row['nombre'] ."</I>";

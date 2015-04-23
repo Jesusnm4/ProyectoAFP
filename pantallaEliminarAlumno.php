@@ -2,14 +2,17 @@
 <?php
 
 include "./includes/conexion.php";
-include "./includes/sesionAdmin.php";
-  
+include "./includes/sesionStaff.php";
+  $nomina_profe="";
+  if (isset($_SESSION['nomina'])) {
+      $nomina_profe = $_SESSION['nomina'];
+  }
   $sql="select
         Nomina,
         Nombre
       from
         usuario
-      where Tipo = 'E'";
+      where Tipo = 'E' and Profesor = '$nomina_profe'";
 
   $result = mysql_query($sql);
 ?>

@@ -9,10 +9,11 @@ $password= $_POST["password"];
 $fechaNacimiento= $_POST["fechaNacimiento"];
 $Tipo= $_POST["Tipo"];
 $Puede_Cita= $_POST["Puede_Cita"];
+$profesor= $_POST["profesor"];
 
-$insert= "INSERT INTO usuario ( Nomina, Nombre, Email, Password, FechaNacimiento, Tipo, Puede_Cita)
+$insert= "INSERT INTO usuario ( Nomina, Nombre, Email, Password, FechaNacimiento, Tipo, Puede_Cita, Profesor)
 	VALUES
-	('$nomina', '$nombre', '$email', '$password', '$fechaNacimiento', '$Tipo', $Puede_Cita) ";
+	('$nomina', '$nombre', '$email', '$password', '$fechaNacimiento', '$Tipo', $Puede_Cita, '$profesor') ";
 
 		mysql_real_escape_string($insert);
 

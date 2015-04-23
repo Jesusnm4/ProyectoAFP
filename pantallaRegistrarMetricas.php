@@ -5,6 +5,7 @@ include "./includes/conexion.php";
 include "./includes/sesionStaff.php";
 
 
+
 $Nomina="";
 if(isset($_GET['Nomina'])){
   $Nomina=$_GET['Nomina'];

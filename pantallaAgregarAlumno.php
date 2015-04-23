@@ -2,8 +2,12 @@
 <?php
 
 include "./includes/conexion.php";
-include "./includes/sesionAdmin.php";
+include "./includes/sesionStaff.php";
 
+$nomina_profe="";
+if (isset($_SESSION['nomina'])) {
+    $nomina_profe = $_SESSION['nomina'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -161,6 +165,11 @@ include "./includes/sesionAdmin.php";
                                     <div class="controls">
                                         <input type="hidden" id="Puede_Cita" name="Puede_Cita" value=0>
                                     </div>
+
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <input type="hidden" id="profesor" name="profesor" value=<?=$nomina_profe ?>>
+                                        </div>
 
 
                         <br>

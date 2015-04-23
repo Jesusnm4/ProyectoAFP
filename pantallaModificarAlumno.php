@@ -4,7 +4,10 @@
 include "./includes/conexion.php";
 include "./includes/sesionStaff.php";
 
-
+$nomina_profe="";
+if (isset($_SESSION['nomina'])) {
+    $nomina_profe = $_SESSION['nomina'];
+}
 $Nomina="";
 if(isset($_GET['Nomina'])){
   $Nomina=$_GET['Nomina'];
@@ -18,7 +21,7 @@ Password,
 FechaNacimiento
 from
 usuario
-where Nomina = '$Nomina'";
+where Nomina = '$Nomina' and Profesor = '$nomina_profe'";
 
 $result = mysql_query($sql);
 

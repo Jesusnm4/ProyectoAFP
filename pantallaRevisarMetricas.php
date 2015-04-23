@@ -181,19 +181,23 @@ $( "#datepicker" ).datepicker();
                     
                           <?php 
                             if(isset($_GET["date"])){
+
                                 $date = $_GET["date"];
                                 $arr = explode('/', $date);
-                                $date = $arr[2]."-".$arr[0]."-".$arr[1];
+                                $fechaMysql = $arr[2]."-".$arr[0]."-".$arr[1];
                                 echo "<table class=\"table table-striped table-hover  span2 well \">
                                       <thead>
                                         <tr>
                                           <th>Matricula</th>
                                           <th>Nombre</th>
-                                          <th>Email</th>
-                                          <th>Estatura</th>
-                                          <th>Peso</th>
-                                          <th>Porcentaje Grasa</th>
-                                          <th>IMC</th>
+                                          <th>Fecha</th>
+                                          <th>Numero de Series</th>
+                                          <th>Distancia</th>
+                                          <th>Tiempo</th>
+                                          <th>Pulsacion1</th>
+                                          <th>Pulsacion3</th>
+                                          <th>Borg</th>
+                                          <th>Tipo</th>
                                         </tr>
                                       </thead>
                                       <tbody>";
@@ -201,45 +205,68 @@ $( "#datepicker" ).datepicker();
                                 $sql="select
                                     Matricula as matricula,
                                     Nombre as nombre,
-                                    Email as email,
-                                    Estatura as estatura,
-                                    Peso as peso,
-                                    PorcentajeGrasa as porcentajeGrasa,
-                                    IMC as imc
+                                    Num_Series as numseries,
+                                    Distancia as distancia,
+                                    Tiempo as tiempo,
+                                    Pulsacion_1 as pulsacion1,
+                                    Pulsacion_3 as pulsacion3,
+                                    Borg as borg,
+                                    registro_diario.Tipo as tipo
                                   from
-                                    medicion_alumno,usuario
-                                  where Matricula = '$Matricula_alumno' and Nomina=Matricula";
+                                    registro_diario,usuario
+                                  where Matricula = '$Matricula_alumno' and Fecha = '$fechaMysql' and Nomina=Matricula";
 
 
                                 $result = mysql_query($sql);
-
+                                if($result === FALSE) {
+                                    die(mysql_error()); 
+                                }
 
                                 while($row = mysql_fetch_array($result)){
                                     $Matricula=$row['matricula'];
                                     $Nombre=$row['nombre'];
-                                    $Email=$row['email'];
-                                    $Estatura=$row['estatura'];
-                                    $Peso=$row['peso'];
-                                    $PorcentajeGrasa=$row['porcentajeGrasa'];
-                                    $IMC=$row['imc'];
+                                    $Fecha=$date;
+                                    $NumSeries=$row['numseries'];
+                                    $Distancia=$row['distanca'];
+                                    $Tiempo=$row['tiempo'];
+                                    $Pulsacion1=$row['pulsacion1'];
+                                    $Pulsacion3=$row['pulsacion3'];
+                                    $borg=$row['borg'];
+                                    $tipo=$row['tipo'];
 
+                                    switch ($tipo) {
+                                      case 'C':
+                                          $tipo="Cardio";
+                                          break;
+                                      case 'F':
+                                          $tipo = "Fuerza";
+                                          break;
+                                      case 'M':
+                                          $tipo = "Mixto";
+                                          break;
+                                  }
 
                                     echo "  <tr>
                                     <td>$Matricula</td>
                                     <td>$Nombre</td>
-                                    <td>$Email</td>
-                                    <td>$Estatura</td>
-                                    <td>$Peso</td>
-                                    <td>$PorcentajeGrasa</td>
-                                    <td>$IMC</td>
-                                    
+                                    <td>$Fecha</td>
+                                    <td>$NumSeries</td>
+                                    <td>$Distancia</td>
+                                    <td>$Tiempo</td>
+                                    <td>$Pulsacion1</td>
+                                    <td>$pulsacion3</td>
+                                    <td>$borg</td>
+                                    <td>$tipo</td>
                                     </tr>";
                               }
 
                               echo    "</tbody>
                                     </table>";
                             }
-                            ?>
+
+                        
+                            
+                      ?>
 
                        
                      

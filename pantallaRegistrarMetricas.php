@@ -10,27 +10,7 @@ if(isset($_GET['Nomina'])){
   $Nomina=$_GET['Nomina'];
 }
 
-$sql="select
-Nomina,
-Nombre,
-Email,
-Password,
-FechaNacimiento
-from
-usuario
-where Nomina = '$Nomina'";
-
-$result = mysql_query($sql);
-
-while($row = mysql_fetch_array($result)){
-  $Nomina = $row['Nomina'];
-  $Nombre = $row['Nombre'];
-  $FechaNacimiento=$row['FechaNacimiento'];
-  $Password=$row['Password'];
-  $Email = $row['Email'];
-}
-
-
+$date = date('Y-m-d');
 ?>
 
 <!DOCTYPE html>
@@ -121,79 +101,64 @@ while($row = mysql_fetch_array($result)){
 
     <div class="container span2 well">
       <div class="row">
-         <form class="form-horizontal" action="modificarAlumno.php"  method="post">
+         <form class="form-horizontal" action="registrarMetricas.php"  method="post">
             <fieldset>
-              <legend> <center> Modificar Datos del alumno</center></legend>
+              <legend> <center> Registrar Metricas del Alumno</center></legend>
 
-               <!-- matricula vieja del alumno -->
+               <!-- Fecha actual -->
               <div class="control-group" align="center">
                 
                   <div class="controls">
-                    <input type="hidden" class="input-xlarge"  name="matriculaVieja" placeholder="Nombre" value="<?=$Nomina ?>" >
+                    <input type="hidden" class="input-xlarge"  name="date" placeholder="Date" value="<?=$date ?>" >
                   </div>
               </div>
-
-                <!-- password vieja del alumno -->
-                <div class="control-group" align="center">
-
-                    <div class="controls">
-                        <input type="hidden" class="input-xlarge"  name="passwordVieja" placeholder="Nombre" value="<?=$Password ?>" >
-                    </div>
-                </div>
 
 
               <!-- matricula del alumno -->
               <div class="control-group" align="center">
-                <label for="matricula" class="control-label">Matricula</label>
                   <div class="controls">
-                    <input type="text" class="input-xlarge" id="matricula" name="matricula" placeholder="Nombre" value="<?=$Nomina ?>" >
+                    <input type="hidden" class="input-xlarge" id="matricula" name="matricula" placeholder="Matricula" value="<?=$Nomina ?>" >
                   </div>
               </div>
 
-              <!-- Nombre completo del alumno -->
+              <!-- Estatura del alumno -->
               <div class="control-group" align="center">
-                <label for="nombre" class="control-label">Nombre completo</label>
+                <label for="estatura" class="control-label">Estatura</label>
                   <div class="controls">
-                    <input type="text" class="input-xlarge" id="nombre" name="nombre" placeholder="Nombre" value="<?=$Nombre ?>" >
+                    <input type="text" class="input-xlarge" id="estatura" name="estatura" placeholder="Estatura" value="" >
                   </div>
               </div>
 
-              <!-- contraseña del alumno -->
-              <div class="control-group" align="center">
-                <label for="password" class="ontrol-label">Contraseña</label>
-                  <div class="controls">
-                    <input type="password" class="input-xlarge" id="password" name="password" placeholder="Contraseña" value="">
-                  </div>
-              </div>
-              <!--repetir contraseña del alumno -->
-              <div class="control-group" align="center">
-                <label for="password2" class="control-label">Repetir Contraseña</label>
-                  <div class="controls">
-                   <input type="password" class="input-xlarge" id="password2" name="password2" placeholder="Repetir Contraseña" value="">
-                  </div>
-              </div>
 
-              <!-- email del alumno -->
+              <!-- Peso del alumno -->
               <div class="control-group" align="center">
-                <label for="email" class="control-label">Email</label>
+                <label for="peso" class="control-label">Peso</label>
                 <div class="controls">
-                  <input type="email" class="input-xlarge" id="email" name="email" placeholder="dd/mm/aaaa" value="<?=$Email ?>">
+                  <input type="text" class="input-xlarge" id="peso" name="peso" placeholder="Peso" value="">
                 </div>
               </div>
 
-              <!-- Fecha de nacimiento del alumno -->
-              <div class="control-group" align="center">
-                <label for="fechaNacimiento" class="control-label">Fecha de Nacimiento</label>
-                <div class="controls">
-                  <input type="text" class="input-xlarge" id="fechaNacimiento" name="fechaNacimiento" placeholder="aaaa-mm-dd" value="<?=$FechaNacimiento ?>">
+              <!-- % de grasa -->
+                <div class="control-group" align="center">
+                    <label for="pgrasa" class="control-label">% de Grasa</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="pgrasa" name="pgrasa" placeholder="% de Grasa" value="">
+                    </div>
+                </div>
+
+                <!-- IMC -->
+                <div class="control-group" align="center">
+                    <label for="imc" class="control-label">I.M.C</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="imc" name="imc" placeholder="I.M.C" value="">
+                    </div>
                 </div>
               </div>
                 <br>
-                <small><center>*Si se dejan en blanco los campos de contraseña se queda la anterior.</center></small>
               <!-- Botones de submit -->
               <div class="control-group" align="center">
                 <br>
-                <button type="submit" class="btn btn-success">Actualizar</button>
+                <button type="submit" class="btn btn-success">Registrar</button>
                 <a class="btn btn-default" href="pantallaIndexStaff.php" role="button">Cancelar</a>
               </div>
             </fieldset>

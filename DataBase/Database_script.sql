@@ -22,7 +22,8 @@ CREATE TABLE `usuario` (
   `Password` varchar(15) NOT NULL,
   `FechaNacimiento` date NOT NULL,
   `Tipo` char(1) NOT NULL,
-  `Puede_Cita` tinyint(1)
+  `Puede_Cita` tinyint(1),
+  `Profesor` varchar(15)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 -- ----------------------------------------------------------
 --
@@ -33,7 +34,7 @@ CREATE TABLE `usuario` (
 --
 
 CREATE TABLE `medicion_alumno` (
-  `Matricula` varchar(11) NOT NULL PRIMARY KEY,
+  `Matricula` varchar(15) NOT NULL PRIMARY KEY,
   `Fecha` date NOT NULL,
   `Estatura` int(3) NOT NULL,
   `Peso` Float(6) NOT NULL,
@@ -44,7 +45,7 @@ CREATE TABLE `medicion_alumno` (
 
 -- ----------------------------------------------------------
 CREATE TABLE `registro_diario` (
-  `Matricula` varchar(11) NOT NULL PRIMARY KEY,
+  `Matricula` varchar(15) NOT NULL PRIMARY KEY,
   `Fecha` date NOT NULL,
   `Num_Series` int ,
   `Distancia` Float(6),
@@ -58,10 +59,11 @@ CREATE TABLE `registro_diario` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 -- --------------------------------------------------------
 CREATE TABLE `agenda` (
-  `Matricula_profe` varchar(11) NOT NULL PRIMARY KEY,
-  `Matricula_alumno` varchar(11) NOT NULL,
+  `IdAgenda` int NOT NULL PRIMARY KEY,
+  `Matricula_profe` varchar(15) NOT NULL,
+  `Matricula_alumno` varchar(15) NOT NULL,
   `Fecha` date NOT NULL,
-  `Hora` TIME NOT NULL,
+  `Hora` VARCHAR(10) NOT NULL,
   `Asistencia` tinyint(1) NOT NULL,
   FOREIGN KEY (Matricula_profe) REFERENCES usuario(Nomina)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;

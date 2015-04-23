@@ -109,7 +109,7 @@ include "./includes/sesionStaff.php";
                 <span class="hamb-bottom"></span>
             </button>
             <div class="container">
-                <h1 align="center">Modificar Alumnos</h1>
+                <h1 align="center">Registrar Metricas</h1>
                 <table class="table table-striped table-hover ">
                   <thead>
                     <tr>
@@ -135,7 +135,7 @@ include "./includes/sesionStaff.php";
                       <td>$Nombre</td>
                       <td>$Email</td>
                       <td>$FechaNacimiento</td>
-                      <td><a href='pantallaModificarAlumno.php?Nomina=$Nomina' class='btn btn-success btn-xs'>Modificar Datos</a></td>
+                      <td><a href='pantallaRegistrarMetricas.php?Nomina=$Nomina' class='btn btn-success btn-xs'>Registrar Metricas</a></td>
                       </tr>";
                     }
                     ?>

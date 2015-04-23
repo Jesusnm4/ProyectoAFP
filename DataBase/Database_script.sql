@@ -53,7 +53,6 @@ CREATE TABLE `registro_diario` (
   `Num_Series` int ,
   `Distancia` Float(6),
   `Tiempo` TIME ,
-  `Pulsacion` int ,
   `Pulsacion_1` int,
   `Pulsacion_3` int,
   `Borg` int,

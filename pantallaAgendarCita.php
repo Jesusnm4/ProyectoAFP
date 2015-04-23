@@ -141,7 +141,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[0]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[0]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -419,7 +419,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[1]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[1]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -696,7 +696,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[2]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[2]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -973,7 +973,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[3]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[3]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -1250,7 +1250,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[4]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[4]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -1527,7 +1527,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[5]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[5]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -1804,7 +1804,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[6]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[6]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -2081,7 +2081,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[7]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[7]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -2358,7 +2358,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[8]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[8]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -2635,7 +2635,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[9]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[9]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -2912,7 +2912,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[10]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[10]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM

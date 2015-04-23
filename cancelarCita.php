@@ -10,6 +10,9 @@
 	$sql = "DELETE FROM agenda WHERE IdAgenda = '$IdAgenda'";
 	$result = mysql_query($sql);
 
+	$sql3= "update usuario set Cita_Disponible= 1 where Nomina='$nomina'"; 
+	$result = mysql_query($sql3);
+
 	echo "<script language=\"javascript\">
 					window.location.href = \"pantallaCalendarioCitas.php\"
 				</script>";

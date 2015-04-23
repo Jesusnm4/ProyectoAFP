@@ -135,7 +135,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[0]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[0]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -156,6 +156,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
                                               <?php 
+                                                $matricula="";
                                                 $sql="select
                                                     IdAgenda as idagenda,
                                                     Matricula_alumno as matricula,
@@ -174,26 +175,238 @@ for( $i=0;$i<15;$i++){
                                               }
                                                 $row = mysql_fetch_array($result);
                                                 $idagenda =  $row['idagenda'];
-                                                echo "<I>".$row['matricula']." ".$row['nombre'] ."</I>";
-                                                echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar</a>";
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
 
 
                                                ?>
 
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+                                              
+                                              
                                           </div>
                                       </td>
                                   </tr>
@@ -204,7 +417,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[1]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[1]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time "style="padding-top: 17px;" >
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -224,21 +437,258 @@ for( $i=0;$i<15;$i++){
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+                                              
+                                              
                                           </div>
                                       </td>
                                   </tr>
@@ -249,7 +699,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[2]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[2]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -269,21 +719,258 @@ for( $i=0;$i<15;$i++){
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+                                              
+                                              
                                           </div>
                                       </td>
                                   </tr>
@@ -294,7 +981,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[3]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[3]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -314,21 +1001,258 @@ for( $i=0;$i<15;$i++){
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+                                              
+                                              
                                           </div>
                                       </td>
                                   </tr>
@@ -339,7 +1263,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[4]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[4]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -359,21 +1283,258 @@ for( $i=0;$i<15;$i++){
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+                                              
+                                              
                                           </div>
                                       </td>
                                   </tr>
@@ -384,7 +1545,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[5]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[5]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -404,21 +1565,258 @@ for( $i=0;$i<15;$i++){
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+                                              
+                                              
                                           </div>
                                       </td>
                                   </tr>
@@ -429,7 +1827,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[6]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[6]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -449,21 +1847,258 @@ for( $i=0;$i<15;$i++){
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+                                              
+                                              
                                           </div>
                                       </td>
                                   </tr>
@@ -474,7 +2109,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[7]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[7]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -494,21 +2129,258 @@ for( $i=0;$i<15;$i++){
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+                                              
+                                              
                                           </div>
                                       </td>
                                   </tr>
@@ -519,7 +2391,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[8]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[8]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -539,21 +2411,258 @@ for( $i=0;$i<15;$i++){
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+                                              
+                                              
                                           </div>
                                       </td>
                                   </tr>
@@ -564,7 +2673,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[9]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[9]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -584,21 +2693,258 @@ for( $i=0;$i<15;$i++){
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+                                              
+                                              
                                           </div>
                                       </td>
                                   </tr>
@@ -609,7 +2955,7 @@ for( $i=0;$i<15;$i++){
                                           <div class="dayofweek"><?php $actual=explode('-',$arrFechas[10]); echo $actual[1];?></div>
                                           <div class="shortdate text-muted"><?php $actual=explode('-',$arrFechas[10]); echo $actual[2].", ".$actual[0];?></div>
                                       </td>
-                                      <td class="agenda-time">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           10:00 AM
                                           <hr>
                                           10:30 AM
@@ -629,21 +2975,258 @@ for( $i=0;$i<15;$i++){
                                       <td class="agenda-events">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '10:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:00 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '11:30 AM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '12:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:00 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
                                               <hr>
-                                              A
+                                              <?php 
+                                                $matricula="";
+                                                $sql="select
+                                                    IdAgenda as idagenda,
+                                                    Matricula_alumno as matricula,
+                                                    Nombre as nombre,
+                                                    Fecha as fecha,
+                                                    Hora as hora
+                                                  from
+                                                    agenda,usuario
+                                                  where Matricula_profe = '$nomina_profe' and Fecha = '$actual[0]-$actual[4]-$actual[3]'
+                                                  and Hora = '1:30 PM' and Matricula_alumno = Nomina ";
+
+
+                                                $result = mysql_query($sql);
+                                              if($result === FALSE) {
+                                                  die(mysql_error()); // TODO: better error handling
+                                              }
+                                                $row = mysql_fetch_array($result);
+                                                $idagenda =  $row['idagenda'];
+                                                $matricula = $row['matricula'];
+                                                if($matricula == ""){
+                                                  echo "<I>Vacio</I>";
+                                                }else{
+                                                  echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
+                                                  echo "<a onclick=\"valida('$idagenda')\" style='position: relative; left: 400px;'class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+
+                                                }
+
+                                               ?>
+                                              
+                                              
                                           </div>
                                       </td>
                                   </tr>

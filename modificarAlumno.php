@@ -2,6 +2,7 @@
 
 
 include "./includes/conexion.php";
+include "./includes/sesionStaff.php";
 
 $matriculaVieja= $_POST["matriculaVieja"];
 $matricula= $_POST["matricula"];

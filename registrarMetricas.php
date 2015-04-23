@@ -1,6 +1,8 @@
 <?php
 
 include "./includes/conexion.php";
+include "./includes/sesionStaff.php";
+
 
 $date= $_POST["date"];
 $matricula= $_POST["matricula"];

@@ -1,5 +1,7 @@
 <?php 
 	require_once("includes/conexion.php"); 
+	include "./includes/sesionStaff.php";
+
 	$IdAgenda="";
 	if(isset($_GET['IdAgenda'])){
 		$IdAgenda=$_GET['IdAgenda'];

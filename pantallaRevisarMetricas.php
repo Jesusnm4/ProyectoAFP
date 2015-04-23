@@ -2,7 +2,30 @@
 <?php
 
 include "./includes/conexion.php";
-include "./includes/sesionAdmin.php";
+include "./includes/sesionStaff.php";
+
+if(isset($_GET['nomina'])){
+  $Matricula_alumno = $_GET['nomina'];
+}
+
+$sql="select
+    Matricula as matricula,
+    Nombre as nombre,
+    Estatura as estatura,
+    Peso as peso,
+    PorcentajeGrasa as porcentajeGrasa,
+    IMC as imc
+  from
+    medicion_alumno,usuario
+  where Matricula = '$Matricula_alumno' ";
+
+
+$result = mysql_query($sql);
+if($result === FALSE) {
+  die(mysql_error()); // TODO: better error handling
+}
+$row = mysql_fetch_array($result);
+
 
 ?>
 
@@ -98,8 +121,46 @@ include "./includes/sesionAdmin.php";
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                     <h1>Revisar metricas</h1>
-                    <p>Esta es la pagina para administrar el sistema de Acondicionamiento Físico Personalizado.</p>
-                    <p>En el menu de la izquiera podrá encontrar acciones para agregar y eliminar profesores así como para limpiar la base de datos.</p>
+                    <table class="table table-striped table-hover ">
+                        <thead>
+                          <tr>
+                            <th>Matricula</th>
+                            <th>Nombre</th>
+                            <th>Estatura</th>
+                            <th>Peso</th>
+                            <th>Porcentaje Grasa</th>
+                            <th>IMC</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <?php
+
+                          while($row = mysql_fetch_array($result)){
+                            $Matricula=$row['matricula'];
+                            $Nombre=$row['Nombre'];
+                            $Email=$row['Email'];
+                            $Estatura=$row['estatura'];
+                            $Peso=$row['peso'];
+                            $PorcentajeGrasa=$row['porcentajeGrasa'];
+                            $IMC=$row['imc'];
+
+
+                            echo "  <tr id=\"". $Nomina ."\">
+                            <td>$Matricula</td>
+                            <td>$Nombre</td>
+                            <td>$Email</td>
+                            <td>$Estatura</td>
+                            <td>$Estatura</td>
+                            <td>$Peso</td>
+                            <td>$PorcentajeGrasa</td>
+                            <td>$IMC</td>
+                            
+                            </tr>";
+                          }
+                          ?>
+
+                        </tbody>
+                     </table>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,8 @@
 <?php
 
 include "./includes/conexion.php";
+include "./includes/sesionStaff.php";
+
 
 $nomina= $_POST["nomina"];
 $nombre= $_POST["nombre"];

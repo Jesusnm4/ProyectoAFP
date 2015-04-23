@@ -2,7 +2,7 @@
 <?php
 
 include "./includes/conexion.php";
-include "./includes/sesionAdmin.php";
+include "./includes/sesionStaff.php";
 
 ?>
 

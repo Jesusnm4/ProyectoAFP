@@ -1,5 +1,7 @@
 <?php 
 	require_once("includes/conexion.php"); 
+	include "./includes/sesionStaff.php";
+
 	$nomina="";
 	if(isset($_GET['nomina'])){
 		$nomina=$_GET['nomina'];

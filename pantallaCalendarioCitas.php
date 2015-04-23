@@ -2,7 +2,7 @@
 <?php
 
 include "./includes/conexion.php";
-include "./includes/sesionAdmin.php";
+include "./includes/sesionStaff.php";
 
 if (isset($_SESSION['nomina'])) {
     $nomina_profe = $_SESSION['nomina'];

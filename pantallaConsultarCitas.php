@@ -4,13 +4,25 @@
 include "./includes/conexion.php";
 include "./includes/sesionEstudiante.php";
 
+if(isset($_SESSION['nomina'])){
+  $Matricula_alumno = $_SESSION['nomina'];
+}
+
+
+$sql="select
+      Fecha as fecha,
+      Hora as hora
+    from
+      agenda
+    where Matricula_alumno = '$Matricula_alumno' ";
+    $result = mysql_query($sql);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Administración</title>
+  <title>Estudiante</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css" media="screen">
   <link rel="stylesheet" href="css/sidebar.css" media="screen">
@@ -80,11 +92,33 @@ include "./includes/sesionEstudiante.php";
             </button>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                    <h1>¡Bienvenido!</h1>
-                    <p>Esta es la pagina para administrar el sistema de Acondicionamiento Físico Personalizado.</p>
-                    <p>En el menu de la izquiera podrá encontrar acciones para agregar y eliminar profesores así como para limpiar la base de datos.</p>
-                    </div>
+                    <h1 align="center">Mis Citas</h1>
+                <table class="table table-striped table-hover ">
+                  <thead>
+                    <tr>
+                      <th>Fecha</th>
+                      <th>Hora</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php
+
+                    while($row = mysql_fetch_array($result)){
+                      $Fecha=$row['fecha'];
+                      $Hora=$row['hora'];
+
+
+                      echo "  <tr id=\"". $Nomina ."\">
+                      <td>$Fecha</td>
+                      <td>$Hora</td>
+                      <td>$Email</td>
+                      </tr>";
+                    }
+                    ?>
+
+                  </tbody>
+                </table>
                 </div>
             </div>
         </div>

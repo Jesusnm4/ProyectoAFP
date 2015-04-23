@@ -89,13 +89,16 @@ for( $i=0;$i<15;$i++){
           <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
               <ul class="nav sidebar-nav">
                   <li class="sidebar-brand">
-                      <a href="pantallaIndexAdmin.php">
+                      <a href="pantallaIndexEstudiante.php">
                           AFP
                       </a>
                   </li>
                   <li>
                       <a href="pantallaAgendarCita.php">Agendar Cita</a>
                   </li>
+                  <li>
+                    <a href="pantallaConsultarCitas.php">Mis Citas</a>
+                </li>
                   <li>
                       <a href="pantallaRegistroDiario.php">Registrar Ejercicio</a>
                   </li>
@@ -178,7 +181,7 @@ for( $i=0;$i<15;$i++){
                                                 $matricula= $row['matricula'];
                                                 $idagenda =  $row['idagenda'];
                                                 if($matricula == ""){
-                                                    echo "<a \"onclick=\"valida('$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
+                                                    echo "<a onclick=\"valida('$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                    echo " <B>HORARIO OCUPADO</B>";
                                                 }

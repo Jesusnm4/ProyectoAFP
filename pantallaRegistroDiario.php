@@ -90,35 +90,19 @@ $( "#datepicker" ).datepicker();
         <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="pantallaIndexProfesor.php">
+                    <a href="pantallaIndexEstudiante.php">
                        AFP
                     </a>
                 </li>
                 <li>
-                    <a href="pantallaAgregarAlumno.php">Agregar Alumno</a>
+                    <a href="pantallaAgendarCita.php">Agendar Cita</a>
                 </li>
                 <li>
-                    <a href="pantallaEliminarAlumno.php">Eliminar Alumno</a>
+                    <a href="pantallaConsultarCitas.php">Mis Citas</a>
                 </li>
                 <li>
-                    <a href="pantallaTablaModificarAlumnos.php">Modificar Alumno</a>
+                    <a href="pantallaRegistroDiario.php">Registrar Ejercicio</a>
                 </li>
-                <li>
-                    <a href="pantallaCompletarInduccion.php">Completar Inducción de Alumnos</a>
-                </li>
-                <li>
-                    <a href="pantallaTablaRegistrarMetricas.php">Registrar Métricas</a>
-                </li>
-                <li>
-                    <a href="pantallaTablaRevisarMetricas.php">Revisar Métricas</a>
-                </li>
-                <li>
-                    <a href="pantallaCalendarioCitas.php">Calendario Citas</a>
-                </li>
-                <li>
-                    <a href="pantallaConfirmarAsistencia.php">Confirmar Asistencia</a>
-                </li>
-                
                 <li>
                     <a href="cerrarSesion.php">Cerrar sesión</a>
                 </li>
@@ -156,6 +140,7 @@ $( "#datepicker" ).datepicker();
                                 $tipo=$_GET["Tipo"];
                                 if($tipo=="M") {
                                     echo "<!-- Fecha actual -->
+                                      <form action=\"registroDiario.php\" method=\"post\">
                                       <div class=\"control-group\" align=\"center\">
 
                                           <div class=\"controls\">
@@ -229,9 +214,12 @@ $( "#datepicker" ).datepicker();
                                                     <option value=5>5</option>
                                                     <option value=6>6</option>
                                                 </select>
-                                            </div>";
+                                                <br><br>
+                                                <input type=\"submit\" value=\"Submit\">
+                                            </div></form>";
                                 }elseif($tipo=="C"){
                                     echo "<!-- Fecha actual -->
+                                    <form action=\"registroDiario.php\" method=\"post\">
                                       <div class=\"control-group\" align=\"center\">
 
                                           <div class=\"controls\">
@@ -299,9 +287,12 @@ $( "#datepicker" ).datepicker();
                                                     <option value=5>5</option>
                                                     <option value=6>6</option>
                                                 </select>
-                                            </div>";
+                                                <br><br>
+                                                <input type=\"submit\" value=\"Submit\">
+                                            </div></form>";
                                 }elseif($tipo=="F"){
                                     echo "<!-- Fecha actual -->
+                                    <form action=\"registroDiario.php\" method=\"post\">
                                       <div class=\"control-group\" align=\"center\">
 
                                           <div class=\"controls\">
@@ -348,7 +339,9 @@ $( "#datepicker" ).datepicker();
                                                     <option value=5>5</option>
                                                     <option value=6>6</option>
                                                 </select>
-                                            </div>";
+                                                <br><br>
+                                                <input type=\"submit\" value=\"Submit\">
+                                            </div></form>";
                                 }
                             }
                             

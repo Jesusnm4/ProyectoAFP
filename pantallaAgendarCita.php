@@ -1,4 +1,3 @@
-///lel
 <?php
 
 include "./includes/conexion.php";
@@ -10,7 +9,8 @@ if (isset($_SESSION['nomina'])) {
 
 $sql2="select
                                                         Profesor,
-                                                        Puede_Cita
+                                                        Puede_Cita,
+                                                        Cita_Disponible
                                                       from
                                                         usuario
                                                       where Nomina = '$nomina'";
@@ -20,7 +20,7 @@ $result2 = mysql_query($sql2);
 $row = mysql_fetch_array($result2);
 $nomina_profe= $row['Profesor'];
 $puede_cita= $row['Puede_Cita'];
-
+$cita_disponible= $row['Cita_Disponible'];
 $count = 0;
 
 //for para llenar los 10 dias habiles de los profesores, se excluyen sabdado y domingo en el if.
@@ -49,9 +49,14 @@ for( $i=0;$i<15;$i++){
   <script>
     function valida(fecha, hora){
       if(<?php echo $puede_cita; ?> == 1){
-        if (confirm("¿Esta seguro?") == true) {
-        window.location.href = "agendarCita.php?Fecha="+fecha+"&Hora="+hora;
-        }
+            if(<?php echo $cita_disponible; ?> == 1)
+            {
+                if (confirm("¿Esta seguro?") == true) {
+                    window.location.href = "agendarCita.php?Fecha=" + fecha + "&Hora=" + hora;
+                }
+            }else{
+                alert("No tienes citas disponibles.");
+            }
       }else{
         alert("No se pueden hacer citas hasta que se complete la induccion.");
       }
@@ -89,7 +94,7 @@ for( $i=0;$i<15;$i++){
           <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
               <ul class="nav sidebar-nav">
                   <li class="sidebar-brand">
-                      <a href="pantallaIndexAdmin.php">
+                      <a href="pantallaIndexEstudiante.php">
                           AFP
                       </a>
                   </li>

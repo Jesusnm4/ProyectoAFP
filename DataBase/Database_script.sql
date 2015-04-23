@@ -34,7 +34,7 @@ CREATE TABLE `usuario` (
 --
 
 CREATE TABLE `medicion_alumno` (
-  `IdMedicion` varchar(15) NOT NULL PRIMARY KEY,
+  `IdMedicion` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `Matricula` varchar(15) NOT NULL,
   `Fecha` date NOT NULL,
   `Estatura` int(3) NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE `medicion_alumno` (
 
 -- ----------------------------------------------------------
 CREATE TABLE `registro_diario` (
-  `IdRegistro` varchar(15) NOT NULL PRIMARY KEY,
+  `IdRegistro` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `Matricula` varchar(15) NOT NULL,
   `Fecha` date NOT NULL,
   `Num_Series` int ,
@@ -61,7 +61,7 @@ CREATE TABLE `registro_diario` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 -- --------------------------------------------------------
 CREATE TABLE `agenda` (
-  `IdAgenda` int NOT NULL PRIMARY KEY,
+  `IdAgenda` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `Matricula_profe` varchar(15) NOT NULL,
   `Matricula_alumno` varchar(15) NOT NULL,
   `Fecha` date NOT NULL,

@@ -2,27 +2,23 @@
 <?php
 
 include "./includes/conexion.php";
-include "./includes/sesionEstudiante.php";
-
-if(isset($_SESSION['nomina'])){
-  $Matricula_alumno = $_SESSION['nomina'];
-}
+include "./includes/sesionStaff.php";
 
 
-$sql="select
-      Fecha as fecha,
-      Hora as hora
+  $sql="select
+      Fecha
     from
-      agenda
-    where Matricula_alumno = '$Matricula_alumno' ";
-    $result = mysql_query($sql);
+      agenda";
+
+  $result = mysql_query($sql);
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Estudiante</title>
+  <title>Administración</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css" media="screen">
   <link rel="stylesheet" href="css/sidebar.css" media="screen">
@@ -63,19 +59,35 @@ $sql="select
         <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="pantallaIndexEstudiante.php">
+                    <a href="pantallaIndexProfesor.php">
                        AFP
                     </a>
                 </li>
                 <li>
-                    <a href="pantallaAgendarCita.php">Agendar Cita</a>
+                    <a href="pantallaAgregarAlumno.php">Agregar Alumno</a>
                 </li>
                 <li>
-                    <a href="pantallaConsultarCitas.php">Mis Citas</a>
+                    <a href="pantallaEliminarAlumno.php">Eliminar Alumno</a>
                 </li>
                 <li>
-                    <a href="pantallaRegistroDiario.php">Registrar Ejercicio</a>
+                    <a href="pantallaTablaModificarAlumnos.php">Modificar Alumno</a>
                 </li>
+                <li>
+                    <a href="pantallaCompletarInduccion.php">Completar Inducción de Alumnos</a>
+                </li>
+                <li>
+                    <a href="pantallaTablaRegistrarMetricas.php">Registrar Métricas</a>
+                </li>
+                <li>
+                    <a href="pantallaTablaRevisarMetricas.php">Revisar Métricas</a>
+                </li>
+                <li>
+                    <a href="pantallaCalendarioCitas.php">Calendario Citas</a>
+                </li>
+                <li>
+                    <a href="pantallaConfirmarAsistencia.php">Confirmar Asistencia</a>
+                </li>
+                
                 <li>
                     <a href="cerrarSesion.php">Cerrar sesión</a>
                 </li>
@@ -91,34 +103,31 @@ $sql="select
                 <span class="hamb-bottom"></span>
             </button>
             <div class="container">
-                <div class="row">
-                    <h1 align="center">Mis Citas</h1>
+                <h1 align="center">Confirmar Asistencia del Alumno</h1>
                 <table class="table table-striped table-hover ">
                   <thead>
                     <tr>
                       <th>Fecha</th>
-                      <th>Hora</th>
-                      
+                      <th>Ver Citas</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php
 
                     while($row = mysql_fetch_array($result)){
-                      $Fecha=$row['fecha'];
-                      $Hora=$row['hora'];
+                      $Fecha=$row['Fecha'];
 
 
-                      echo "  <tr id=\"". $Matricula_alumno ."\">
+
+                      echo "  <tr id=\"". $Fecha ."\">
                       <td>$Fecha</td>
-                      <td>$Hora</td>
+                      <td><a href='pantallaConfirmarAsistenciaHora.php?Fecha=$Fecha' class='btn btn-success btn-xs'>Ver Citas</a></td>
                       </tr>";
                     }
                     ?>
 
                   </tbody>
                 </table>
-                </div>
             </div>
         </div>
         <!-- /#page-content-wrapper -->

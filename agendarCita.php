@@ -31,7 +31,7 @@
 	$result = mysql_query($sql);
 
 
-    $sql3= "update usuario set Cita_Disponible=0 where Nomina='$nomina'";
+    $sql3= "update usuario set Cita_Disponible=Cita_Disponible-1 where Nomina='$nomina'";
     $result = mysql_query($sql3);
 
 	echo "<script language=\"javascript\">

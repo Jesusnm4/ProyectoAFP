@@ -22,7 +22,7 @@ $sql="select
     IMC as imc
   from
     medicion_alumno,usuario
-  where Matricula = '$Matricula_alumno' and Nomina=Matricula";
+  where Matricula = '$Nomina' and Nomina=Matricula";
 
 
 $result = mysql_query($sql);
@@ -180,7 +180,7 @@ $( "#datepicker" ).datepicker();
                                         <div class=\"control-group\" align=\"center\">
                                             <label for=\"tiempo\" class=\"control-label\">Tiempo</label>
                                             <div class=\"controls\">
-                                                <input type=\"text\" class=\"input-xlarge\" id=\"tiempo\" name=\"tiempo\" placeholder=\"Tiempo\" value=\"\">
+                                                <input type=\"text\" class=\"input-xlarge\" id=\"tiempo\" name=\"tiempo\" placeholder=\"HH:MM:SS\" value=\"\">
                                             </div>
                                         </div>
 
@@ -253,7 +253,7 @@ $( "#datepicker" ).datepicker();
                                         <div class=\"control-group\" align=\"center\">
                                             <label for=\"tiempo\" class=\"control-label\">Tiempo</label>
                                             <div class=\"controls\">
-                                                <input type=\"text\" class=\"input-xlarge\" id=\"tiempo\" name=\"tiempo\" placeholder=\"Tiempo\" value=\"\">
+                                                <input type=\"text\" class=\"input-xlarge\" id=\"tiempo\" name=\"tiempo\" placeholder=\"HH:MM:SS\" value=\"\">
                                             </div>
                                         </div>
 

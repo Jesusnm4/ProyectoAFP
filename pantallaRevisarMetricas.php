@@ -227,7 +227,7 @@ $( "#datepicker" ).datepicker();
                                     $Nombre=$row['nombre'];
                                     $Fecha=$date;
                                     $NumSeries=$row['numseries'];
-                                    $Distancia=$row['distanca'];
+                                    $Distancia=$row['distancia'];
                                     $Tiempo=$row['tiempo'];
                                     $Pulsacion1=$row['pulsacion1'];
                                     $Pulsacion3=$row['pulsacion3'];
@@ -254,7 +254,7 @@ $( "#datepicker" ).datepicker();
                                     <td>$Distancia</td>
                                     <td>$Tiempo</td>
                                     <td>$Pulsacion1</td>
-                                    <td>$pulsacion3</td>
+                                    <td>$Pulsacion3</td>
                                     <td>$borg</td>
                                     <td>$tipo</td>
                                     </tr>";

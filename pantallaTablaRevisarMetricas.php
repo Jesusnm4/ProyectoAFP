@@ -5,9 +5,12 @@ include "./includes/conexion.php";
 include "./includes/sesionStaff.php";
 
 
-  $Nomina="";
+  $Nomina_alumno="";
   if(isset($_GET['nomina'])){
-    $Nomina=$_GET['nomina'];
+    $Nomina_alumno=$_GET['nomina'];
+  }
+  if(isset($_SESSION['nomina'])){
+    $Nomina_profesor=$_SESSION['nomina'];
   }
 
   $sql="select
@@ -17,7 +20,7 @@ include "./includes/sesionStaff.php";
       FechaNacimiento
     from
       usuario
-    where Tipo = 'E'";
+    where Tipo = 'E' and Profesor='$Nomina_profesor'";
 
   $result = mysql_query($sql);
 
@@ -109,7 +112,7 @@ include "./includes/sesionStaff.php";
                 <span class="hamb-bottom"></span>
             </button>
             <div class="container">
-                <h1 align="center">Registrar Metricas</h1>
+                <h1 align="center">Revisar Metricas</h1>
                 <table class="table table-striped table-hover ">
                   <thead>
                     <tr>
@@ -135,7 +138,7 @@ include "./includes/sesionStaff.php";
                       <td>$Nombre</td>
                       <td>$Email</td>
                       <td>$FechaNacimiento</td>
-                      <td><a href='pantallaRegistrarMetricas.php?Nomina=$Nomina' class='btn btn-success btn-xs'>Registrar Metricas</a></td>
+                      <td><a href='pantallaRevisarMetricas.php?Nomina=$Nomina' class='btn btn-success btn-xs'>Revisar Metricas</a></td>
                       </tr>";
                     }
                     ?>

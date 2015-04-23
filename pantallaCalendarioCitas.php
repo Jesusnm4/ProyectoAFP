@@ -4,7 +4,7 @@
 include "./includes/conexion.php";
 include "./includes/sesionAdmin.php";
 
-if (!isset($_SESSION['nomina'])) {
+if (isset($_SESSION['nomina'])) {
     $nomina_profe = $_SESSION['nomina'];
 }
 

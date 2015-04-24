@@ -86,7 +86,7 @@ include "./includes/sesionAdmin.php";
                       <div class="well well-sm">
                         <form class="form-horizontal" action="" method="post">
                         <fieldset>
-                          <legend class="text-center">Contanos</legend>
+                          <legend class="text-center">Contactanos</legend>
                   
                           <!-- Name input-->
                           <div class="form-group">

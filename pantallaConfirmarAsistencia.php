@@ -87,6 +87,9 @@ include "./includes/sesionStaff.php";
                 <li>
                     <a href="pantallaConfirmarAsistencia.php">Confirmar Asistencia</a>
                 </li>
+                <li>
+                    <a href="reporteAsistencias.php">Generar Reporte de Asistencias</a>
+                </li>
                 
                 <li>
                     <a href="cerrarSesion.php">Cerrar sesión</a>

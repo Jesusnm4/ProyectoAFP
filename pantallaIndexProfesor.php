@@ -97,9 +97,9 @@ include "./includes/sesionStaff.php";
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
-                    <h1>¡Bienvenido!</h1>
-                    <p>Esta es la pagina para administrar el sistema de Acondicionamiento Físico Personalizado.</p>
-                    <p>En el menu de la izquiera podrá encontrar acciones para agregar y eliminar profesores así como para limpiar la base de datos.</p>
+                    <h1>¡Bienvenido Profesor!</h1>
+                    <p>Esta es la pagina para profesores del sistema de Acondicionamiento Físico Personalizado.</p>
+                    <p>En el menu de la izquiera podrá encontrar acciones para manejar alumnos, revisar sus citas y metricas.</p>
                     </div>
                 </div>
             </div>

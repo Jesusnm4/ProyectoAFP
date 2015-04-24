@@ -186,16 +186,16 @@ $( "#datepicker" ).datepicker();
 
                                         <!-- Pulsacion 1-->
                                         <div class=\"control-group\" align=\"center\">
-                                            <label for=\"puls1\" class=\"control-label\">Pulsacion 1</label>
+                                            <label for=\"puls1\" class=\"control-label\">Pulsación al terminar</label>
                                             <div class=\"controls\">
-                                                <input type=\"text\" class=\"input-xlarge\" id=\"puls1\" name=\"puls1\" placeholder=\"Pulsacion 1\" value=\"\">
+                                                <input type=\"text\" class=\"input-xlarge\" id=\"puls1\" name=\"puls1\" placeholder=\"Pulsación al terminar\" value=\"\">
                                             </div>
 
                                             <!-- Pulsacion 3-->
                                             <div class=\"control-group\" align=\"center\">
-                                                <label for=\"puls3\" class=\"control-label\">Pulsacion 3</label>
+                                                <label for=\"puls3\" class=\"control-label\">Pulsación a los 3 minutos</label>
                                                 <div class=\"controls\">
-                                                    <input type=\"text\" class=\"input-xlarge\" id=\"puls3\" name=\"puls3\" placeholder=\"Pulsacion 3\" value=\"\">
+                                                    <input type=\"text\" class=\"input-xlarge\" id=\"puls3\" name=\"puls3\" placeholder=\"Pulsación a los 3 minutos\" value=\"\">
                                                 </div>
                                             </div>
 
@@ -210,6 +210,10 @@ $( "#datepicker" ).datepicker();
                                                     <option value=4>4</option>
                                                     <option value=5>5</option>
                                                     <option value=6>6</option>
+                                                    <option value=7>7</option>
+                                                    <option value=8>8</option>
+                                                    <option value=9>9</option>
+                                                    <option value=10>10</option>
                                                 </select>
                                                 <br><br>
                                                 <input type=\"submit\" value=\"Submit\">
@@ -259,16 +263,16 @@ $( "#datepicker" ).datepicker();
 
                                         <!-- Pulsacion 1-->
                                         <div class=\"control-group\" align=\"center\">
-                                            <label for=\"puls1\" class=\"control-label\">Pulsacion 1</label>
+                                            <label for=\"puls1\" class=\"control-label\">Pulsación al terminar</label>
                                             <div class=\"controls\">
-                                                <input type=\"text\" class=\"input-xlarge\" id=\"puls1\" name=\"puls1\" placeholder=\"Pulsacion 1\" value=\"\">
+                                                <input type=\"text\" class=\"input-xlarge\" id=\"puls1\" name=\"puls1\" placeholder=\"Pulsación al terminar\" value=\"\">
                                             </div>
 
                                             <!-- Pulsacion 3-->
                                             <div class=\"control-group\" align=\"center\">
-                                                <label for=\"puls3\" class=\"control-label\">Pulsacion 3</label>
+                                                <label for=\"puls3\" class=\"control-label\">Pulsación a los 3 minutos</label>
                                                 <div class=\"controls\">
-                                                    <input type=\"text\" class=\"input-xlarge\" id=\"puls3\" name=\"puls3\" placeholder=\"Pulsacion 3\" value=\"\">
+                                                    <input type=\"text\" class=\"input-xlarge\" id=\"puls3\" name=\"puls3\" placeholder=\"Pulsación a los 3 minutos\" value=\"\">
                                                 </div>
                                             </div>
 
@@ -283,6 +287,10 @@ $( "#datepicker" ).datepicker();
                                                     <option value=4>4</option>
                                                     <option value=5>5</option>
                                                     <option value=6>6</option>
+                                                    <option value=7>7</option>
+                                                    <option value=8>8</option>
+                                                    <option value=9>9</option>
+                                                    <option value=10>10</option>
                                                 </select>
                                                 <br><br>
                                                 <input type=\"submit\" value=\"Submit\">
@@ -335,6 +343,10 @@ $( "#datepicker" ).datepicker();
                                                     <option value=4>4</option>
                                                     <option value=5>5</option>
                                                     <option value=6>6</option>
+                                                    <option value=7>7</option>
+                                                    <option value=8>8</option>
+                                                    <option value=9>9</option>
+                                                    <option value=10>10</option>
                                                 </select>
                                                 <br><br>
                                                 <input type=\"submit\" value=\"Submit\">

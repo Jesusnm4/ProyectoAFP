@@ -87,18 +87,18 @@ $( "#datepicker" ).datepicker();
         <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="pantallaIndexEstudiante.php">
+                    <a href="pantallaIndexAdmin.php">
                        AFP
                     </a>
-                </li>
-                <li>
-                    <a href="pantallaAgendarCita.php">Agendar Cita</a>
                 </li>
                 <li>
                     <a href="pantallaConsultarCitas.php">Mis Citas</a>
                 </li>
                 <li>
                     <a href="pantallaRegistroDiario.php">Registrar Ejercicio</a>
+                </li>
+                <li>
+                    <a href="pantallaHistorialRegistroDiario.php">Historial Registro Diario</a>
                 </li>
                 <li>
                     <a href="cerrarSesion.php">Cerrar sesión</a>

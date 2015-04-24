@@ -56,13 +56,13 @@ include "./includes/sesionEstudiante.php";
                     </a>
                 </li>
                 <li>
-                    <a href="pantallaAgendarCita.php">Agendar Cita</a>
-                </li>
-                <li>
                     <a href="pantallaConsultarCitas.php">Mis Citas</a>
                 </li>
                 <li>
                     <a href="pantallaRegistroDiario.php">Registrar Ejercicio</a>
+                </li>
+                <li>
+                    <a href="pantallaHistorialRegistroDiario.php">Historial Registro Diario</a>
                 </li>
                 <li>
                     <a href="cerrarSesion.php">Cerrar sesión</a>

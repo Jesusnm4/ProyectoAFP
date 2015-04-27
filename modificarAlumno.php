@@ -1,5 +1,7 @@
 <?php
 
+//Andrés Gutiérrez Castaño A01191581
+//Jesús Navarro Marín A00813111
 
 include "./includes/conexion.php";
 include "./includes/sesionStaff.php";

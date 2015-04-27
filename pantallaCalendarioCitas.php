@@ -155,7 +155,7 @@ for( $i=0;$i<15;$i++){
                                           <hr>
                                           1:30 PM
                                       </td>
-                                      <td class="agenda-events">
+                                      <td class="agenda-time" style="padding-top: 17px;">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
                                               <?php 
@@ -189,7 +189,6 @@ for( $i=0;$i<15;$i++){
 
 
                                                ?>
-
                                               <hr>
                                               <?php 
                                                 $matricula="";
@@ -221,6 +220,7 @@ for( $i=0;$i<15;$i++){
                                                 }
 
                                                ?>
+
                                               <hr>
                                               <?php 
                                                 $matricula="";
@@ -437,7 +437,7 @@ for( $i=0;$i<15;$i++){
                                           <hr>
                                           1:30 PM
                                       </td>
-                                      <td class="agenda-events">
+                                     <td class="agenda-time" style="padding-top: 17px;">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
                                               <?php 
@@ -719,7 +719,7 @@ for( $i=0;$i<15;$i++){
                                           <hr>
                                           1:30 PM
                                       </td>
-                                      <td class="agenda-events">
+                                     <td class="agenda-time" style="padding-top: 17px;">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
                                               <?php 
@@ -1001,7 +1001,7 @@ for( $i=0;$i<15;$i++){
                                           <hr>
                                           1:30 PM
                                       </td>
-                                      <td class="agenda-events">
+                                     <td class="agenda-time" style="padding-top: 17px;">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
                                               <?php 
@@ -1283,7 +1283,7 @@ for( $i=0;$i<15;$i++){
                                           <hr>
                                           1:30 PM
                                       </td>
-                                      <td class="agenda-events">
+                                     <td class="agenda-time" style="padding-top: 17px;">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
                                               <?php 
@@ -1565,7 +1565,7 @@ for( $i=0;$i<15;$i++){
                                           <hr>
                                           1:30 PM
                                       </td>
-                                      <td class="agenda-events">
+                                     <td class="agenda-time" style="padding-top: 17px;">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
                                               <?php 
@@ -1847,7 +1847,7 @@ for( $i=0;$i<15;$i++){
                                           <hr>
                                           1:30 PM
                                       </td>
-                                      <td class="agenda-events">
+                                     <td class="agenda-time" style="padding-top: 17px;">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
                                               <?php 
@@ -2129,7 +2129,7 @@ for( $i=0;$i<15;$i++){
                                           <hr>
                                           1:30 PM
                                       </td>
-                                      <td class="agenda-events">
+                                     <td class="agenda-time" style="padding-top: 17px;">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
                                               <?php 
@@ -2411,7 +2411,7 @@ for( $i=0;$i<15;$i++){
                                           <hr>
                                           1:30 PM
                                       </td>
-                                      <td class="agenda-events">
+                                     <td class="agenda-time" style="padding-top: 17px;">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
                                               <?php 
@@ -2693,7 +2693,7 @@ for( $i=0;$i<15;$i++){
                                           <hr>
                                           1:30 PM
                                       </td>
-                                      <td class="agenda-events">
+                                     <td class="agenda-time" style="padding-top: 17px;">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
                                               <?php 
@@ -2975,7 +2975,7 @@ for( $i=0;$i<15;$i++){
                                           <hr>
                                           1:30 PM
                                       </td>
-                                      <td class="agenda-events">
+                                     <td class="agenda-time" style="padding-top: 17px;">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
                                               <?php 

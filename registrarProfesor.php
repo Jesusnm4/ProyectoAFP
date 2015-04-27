@@ -1,20 +1,5 @@
 <?php
 
-/**
-* Este archivo es la pantalla de inscripcion de alumno y tiene parte de php para insertar el alumno en la base de datos.
-*
-* @category   Proyecto
-* @package    Sistema de Inscripciones de Natacion
-* @author     Azael Alberto Alanis Garza <azaelalanis.g@gmail.com>
-* @author     Andres Gerardo Cavazos Hernandez <andrscvz@gmail.com>
-* @author			Eugenio Jose Martinez Ramos <eugeniomartinez92@gmail.com>
-* @author			Roberto Carlos Rivera Martinez <robert_rivmtz@hotmail.com>
-* @author			Hector Palomares Gonzalez <hpalomares@itesm.mx>
-* @copyright  2014
-* @license    The MIT License
-* @version    1.0
-* @link       https://github.com/azaelalanis/Sistema-de-Inscripciones-de-Natacion.git
-*/
 
 include "./includes/conexion.php";
 
@@ -22,12 +7,16 @@ $nomina= $_POST["nomina"];
 $nombre= $_POST["nombre"];
 $email= $_POST["email"];
 $password= $_POST["password"];
+$password_confirm= $_POST["password_confirm"];
 $fechaNacimiento= $_POST["fechaNacimiento"];
 $Tipo= $_POST["Tipo"];
 
-$insert= "INSERT INTO usuario ( Nomina, Nombre, Email, Password, FechaNacimiento, Tipo)
-	VALUES
-	('$nomina', '$nombre', '$email', '$password', '$fechaNacimiento', '$Tipo') ";
+$nac  = explode('-', $fechaNacimiento);
+if (checkdate($nac[1], $nac[2], $nac[0])) {
+	if($password == $password_confirm){
+		$insert= "INSERT INTO usuario ( Nomina, Nombre, Email, Password, FechaNacimiento, Tipo)
+		VALUES
+		('$nomina', '$nombre', '$email', '$password', '$fechaNacimiento', '$Tipo') ";
 
 		mysql_real_escape_string($insert);
 
@@ -38,4 +27,16 @@ $insert= "INSERT INTO usuario ( Nomina, Nombre, Email, Password, FechaNacimiento
 		alert(\"Profesor Registrado con exito!\");
 		window.location.href = \"pantallaAgregarProfesor.php\"
 		</script>";
-		?>
+	} else{
+		echo "<script language=\"javascript\">
+		alert(\"Las contraseñas no coinciden!\");
+		window.location.href = \"pantallaAgregarProfesor.php\"
+		</script>";
+	}
+} else {
+	echo "<script language=\"javascript\">
+	alert(\"La fecha de Nacimiento no es valida!\");
+	window.location.href = \"pantallaAgregarProfesor.php\"
+	</script>";
+}
+?>

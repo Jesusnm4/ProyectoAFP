@@ -12,20 +12,23 @@ $fechaNacimiento= $_POST["fechaNacimiento"];
 $password= $_POST["password"];
 $password2= $_POST["password2"];
 
-if($password != $password2){
+
+$nac  = explode('-', $fechaNacimiento);
+if (checkdate($nac[1], $nac[2], $nac[0])) {
+    if($password != $password2){
     echo "<script language=\"javascript\">
     alert(\"Las contraseñas no coinciden!\");
     window.location.href = \"pantallaModificarAlumno.php?Nomina=$matriculaVieja\"
-</script>";
-}else{
-    $sql= "update usuario
-    set
-    Nomina='$matricula',
-    Nombre='$nombre',
-    Email='$email',
-    FechaNacimiento='$fechaNacimiento'
-    where
-    Nomina='$matriculaVieja'";
+    </script>";
+    }else{
+        $sql= "update usuario
+        set
+        Nomina='$matricula',
+        Nombre='$nombre',
+        Email='$email',
+        FechaNacimiento='$fechaNacimiento'
+        where
+        Nomina='$matriculaVieja'";
 
         if($password !=""){
             $sql2= "update usuario
@@ -44,8 +47,15 @@ if($password != $password2){
             echo "Error";
 
         echo "<script language=\"javascript\">
-    alert(\"Alumno Actualizado con exito!\");
-    window.location.href = \"pantallaTablaModificarAlumnos.php\"
-    </script>";
+        alert(\"Alumno Actualizado con exito!\");
+        window.location.href = \"pantallaTablaModificarAlumnos.php\"
+        </script>";
+    }
+} else {
+    echo "<script language=\"javascript\">
+        alert(\"La fecha de Nacimiento no es valida!\");
+        window.location.href = \"pantallaModificarAlumno.php?Nomina=$matriculaVieja\"
+        </script>";
 }
+
 ?>

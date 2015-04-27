@@ -180,7 +180,7 @@ while($row = mysql_fetch_array($result)){
               <div class="control-group" align="center">
                 <label for="email" class="control-label">Email</label>
                 <div class="controls">
-                  <input type="email" class="input-xlarge" id="email" name="email" placeholder="dd/mm/aaaa" value="<?=$Email ?>">
+                  <input type="email" class="input-xlarge" id="email" name="email" placeholder="example@mail.com" value="<?=$Email ?>">
                 </div>
               </div>
 

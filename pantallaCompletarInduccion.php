@@ -75,46 +75,50 @@ if (isset($_SESSION['nomina'])) {
         <div class="overlay"></div>
 
           <!-- Sidebar -->
-          <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
-              <ul class="nav sidebar-nav">
-                  <li class="sidebar-brand">
-                      <a href="pantallaIndexProfesor.php">
-                          AFP
-                      </a>
-                  </li>
-                  <li>
-                      <a href="pantallaAgregarAlumno.php">Agregar Alumno</a>
-                  </li>
-                  <li>
-                      <a href="pantallaEliminarAlumno.php">Eliminar Alumno</a>
-                  </li>
-                  <li>
-                      <a href="pantallaTablaModificarAlumnos.php">Modificar Alumno</a>
-                  </li>
-                  <li>
-                      <a href="pantallaCompletarInduccion.php">Completar Inducción de Alumnos</a>
-                  </li>
-                  <li>
-                      <a href="pantallaTablaRegistrarMetricas.php">Registrar Métricas</a>
-                  </li>
-                  <li>
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="pantallaIndexProfesor.php">
+                       AFP
+                    </a>
+                </li>
+                <li>
+                    <a href="pantallaAgregarAlumno.php">Agregar Alumno</a>
+                </li>
+                <li>
+                    <a href="pantallaEliminarAlumno.php">Eliminar Alumno</a>
+                </li>
+                <li>
+                    <a href="pantallaTablaModificarAlumnos.php">Modificar Alumno</a>
+                </li>
+                <li>
+                    <a href="pantallaCompletarInduccion.php">Completar Inducción de Alumnos</a>
+                </li>
+                <li>
+                    <a href="pantallaTablaRegistrarMetricas.php">Registrar Métricas</a>
+                </li>
+                <li>
                     <a href="pantallaTablaRevisarMetricas.php">Revisar Métricas</a>
-                  </li>
-                  <li>
-                      <a href="pantallaCalendarioCitas.php">Calendario Citas</a>
-                  </li>
-                  <li>
-                      <a href="pantallaConfirmarAsistencia.php">Confirmar Asistencia</a>
-                  </li>
-                  <li>
+                </li>
+                 <li>
+                    <a href="pantallaTablaAgendarCita.php">Agendar Citas</a>
+                </li>
+                <li>
+                    <a href="pantallaCalendarioCitas.php">Calendario Citas</a>
+                </li>
+                <li>
+                    <a href="pantallaConfirmarAsistencia.php">Confirmar Asistencia</a>
+                </li>
+                <li>
                     <a href="reporteAsistencias.php">Generar Reporte de Asistencias</a>
-                  </li>
-                  <li>
-                      <a href="cerrarSesion.php">Cerrar sesión</a>
-                  </li>
-              </ul>
-          </nav>
-          <!-- /#sidebar-wrapper -->
+                </li>
+                
+                <li>
+                    <a href="cerrarSesion.php">Cerrar sesión</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
         <div id="page-content-wrapper">

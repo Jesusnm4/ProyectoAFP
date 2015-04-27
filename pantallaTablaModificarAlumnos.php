@@ -94,6 +94,9 @@ if (isset($_SESSION['nomina'])) {
                 <li>
                     <a href="pantallaTablaRevisarMetricas.php">Revisar Métricas</a>
                 </li>
+                 <li>
+                    <a href="pantallaTablaAgendarCita.php">Agendar Citas</a>
+                </li>
                 <li>
                     <a href="pantallaCalendarioCitas.php">Calendario Citas</a>
                 </li>

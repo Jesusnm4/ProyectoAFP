@@ -8,6 +8,11 @@ if (isset($_SESSION['nomina'])) {
     $nomina_profe = $_SESSION['nomina'];
 }
 
+$Nomina="";
+  if(isset($_GET['Nomina'])){
+    $Nomina=$_GET['Nomina'];
+  }
+
 $count = 0;
 
 //for para llenar los 10 dias habiles de los profesores, se excluyen sabdado y domingo en el if.
@@ -34,10 +39,22 @@ for( $i=0;$i<15;$i++){
   <script type="text/javascript" src="js/sidebar.js"></script>
   
   <script>
-    function valida(idagenda){
-      if (confirm("¿Esta seguro?") == true) {
-        window.location.href = "cancelarCita.php?IdAgenda="+idagenda;
-      }
+    function valida(nomina, fecha, hora){
+      
+                if (confirm("¿Esta seguro?") == true) {
+                    window.location.href = "agendarCita.php?Nomina="+ nomina + "&Fecha=" + fecha + "&Hora=" + hora;
+                }
+       
+    }
+  </script>
+
+<script>
+    function valida2(nomina){
+      
+                if (confirm("¿Esta seguro?") == true) {
+                    window.location.href = "cancelarCita.php?Nomina="+ nomina;
+                }
+       
     }
   </script>
 
@@ -161,7 +178,7 @@ for( $i=0;$i<15;$i++){
                                           <hr>
                                           1:30 PM
                                       </td>
-                                      <td class="agenda-event" style="padding-top: 17px;">
+                                      <td class="agenda-event">
                                           <div class="agenda-event">
                                               <i class="text-muted" title="Repeating event"></i> 
                                               <?php 
@@ -186,10 +203,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
 
                                                 }
 
@@ -218,11 +235,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -250,11 +266,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -282,11 +297,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -313,11 +327,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -344,11 +357,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -375,11 +387,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -406,11 +417,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -468,11 +478,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
 
@@ -501,11 +510,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -532,11 +540,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -564,11 +571,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -595,11 +601,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -626,11 +631,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -657,11 +661,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -688,11 +691,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -750,11 +752,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
 
@@ -783,11 +784,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -814,11 +814,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -846,11 +845,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -877,11 +875,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -908,11 +905,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -939,11 +935,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -970,11 +965,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1032,11 +1026,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
 
@@ -1065,11 +1058,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1096,11 +1088,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1128,11 +1119,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1159,11 +1149,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1190,11 +1179,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1221,11 +1209,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1252,11 +1239,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1314,11 +1300,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
 
@@ -1347,11 +1332,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1378,11 +1362,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1410,11 +1393,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1441,11 +1423,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1472,11 +1453,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1503,11 +1483,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1534,11 +1513,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1596,11 +1574,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
 
@@ -1629,11 +1606,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1660,11 +1636,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1692,11 +1667,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1723,11 +1697,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1754,11 +1727,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1785,11 +1757,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1816,11 +1787,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1878,11 +1848,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
 
@@ -1911,11 +1880,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1942,11 +1910,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -1974,11 +1941,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2005,11 +1971,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2036,11 +2001,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2067,11 +2031,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2098,11 +2061,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2160,11 +2122,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
 
@@ -2193,11 +2154,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2224,11 +2184,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2256,11 +2215,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2287,11 +2245,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2318,11 +2275,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2349,11 +2305,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2380,11 +2335,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2442,11 +2396,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
 
@@ -2475,11 +2428,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2506,11 +2458,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2538,11 +2489,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2569,11 +2519,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2600,11 +2549,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2631,11 +2579,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2662,11 +2609,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2724,11 +2670,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
 
@@ -2757,11 +2702,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2788,11 +2732,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2820,11 +2763,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2851,11 +2793,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2882,11 +2823,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2913,11 +2853,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -2944,11 +2883,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -3006,11 +2944,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
 
@@ -3039,11 +2976,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -3070,11 +3006,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -3102,11 +3037,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -3133,11 +3067,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -3164,11 +3097,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -3195,11 +3127,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>
@@ -3226,11 +3157,10 @@ for( $i=0;$i<15;$i++){
                                                 $idagenda =  $row['idagenda'];
                                                 $matricula = $row['matricula'];
                                                 if($matricula == ""){
-                                                  echo "<I>Vacio</I>";
+                                                  echo "<a onclick=\"valida('$Nomina','$actual[0]-$actual[4]-$actual[3]','10:00 AM')\" class='btn btn-success btn-xs'>Agendar Cita</a>";
                                                 }else{
                                                   echo "<B>Matricula: </B><I>".$row['matricula']."</I> <B> Nombre: </B>  ".$row['nombre'] ." </I>";
-                                                  echo "<a onclick=\"valida('$idagenda')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
-
+                                                  echo "<a onclick=\"valida2('$Nomina')\" class='btn btn-danger btn-xs'>Cancelar Cita</a>";
                                                 }
 
                                                ?>

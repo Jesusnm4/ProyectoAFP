@@ -4,11 +4,19 @@
 include "./includes/conexion.php";
 include "./includes/sesionStaff.php";
 
+$nomina_profe="";
+if (isset($_SESSION['nomina'])) {
+    $nomina_profe = $_SESSION['nomina'];
+}
 
   $sql="select
-      Fecha
+      Nomina,
+      Nombre,
+      Email,
+      FechaNacimiento
     from
-      agenda";
+      usuario
+    where Tipo = 'E' and Profesor = '$nomina_profe' and Puede_Cita=1 and Cita_Disponible=1";
 
   $result = mysql_query($sql);
 
@@ -109,25 +117,34 @@ include "./includes/sesionStaff.php";
                 <span class="hamb-bottom"></span>
             </button>
             <div class="container">
-                <h1 align="center">Confirmar Asistencia del Alumno</h1>
+                <h1 align="center">Agendar Cita</h1>
                 <table class="table table-striped table-hover ">
                   <thead>
                     <tr>
-                      <th>Fecha</th>
-                      <th>Ver Citas</th>
+                      <th>Nomina</th>
+                      <th>Nombre</th>
+                      <th>Email</th>
+                      <th>Fecha de Nacimiento</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php
 
+                   
                     while($row = mysql_fetch_array($result)){
-                      $Fecha=$row['Fecha'];
+                      $Nomina=$row['Nomina'];
+                      $Nombre=$row['Nombre'];
+                      $Email=$row['Email'];
+                      $FechaNacimiento=$row['FechaNacimiento'];
 
 
 
-                      echo "  <tr id=\"". $Fecha ."\">
-                      <td>$Fecha</td>
-                      <td><a href='pantallaConfirmarAsistenciaHora.php?Fecha=$Fecha' class='btn btn-success btn-xs'>Ver Citas</a></td>
+                      echo "  <tr id=\"". $Nomina ."\">
+                      <td>$Nomina</td>
+                      <td>$Nombre</td>
+                      <td>$Email</td>
+                      <td>$FechaNacimiento</td>
+                      <td><a href='pantallaAgendarCitas.php?Nomina=$Nomina' class='btn btn-success btn-xs'>Agendar Cita</a></td>
                       </tr>";
                     }
                     ?>

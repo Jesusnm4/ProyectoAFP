@@ -1,6 +1,6 @@
 <?php 
 	require_once("includes/conexion.php"); 
-	include "./includes/sesionEstudiante.php";
+	include "./includes/sesionStaff.php";
 
 
     $fecha="";
@@ -12,30 +12,33 @@
         $hora=$_GET['Hora'];
     }
     $nomina="";
-    if (isset($_SESSION['nomina'])) {
-        $nomina= $_SESSION['nomina'];
+    if(isset($_GET['Nomina'])){
+        $nomina=$_GET['Nomina'];
     }
-    $sql2="select
-                                                        Profesor
-                                                      from
-                                                        usuario
-                                                      where Nomina = '$nomina'";
+    $matricula_profe="";
+    if (isset($_SESSION['nomina'])) {
+        $matricula_profe= $_SESSION['nomina'];
+    }
 
 
-    $result2 = mysql_query($sql2);
-    $row = mysql_fetch_array($result2);
-    $matricula_profe= $row['Profesor'];
-	$sql = "INSERT INTO agenda ( Matricula_profe, Matricula_alumno, Fecha, Hora, Asistencia)
-	VALUES
-	('$matricula_profe', '$nomina', '$fecha', '$hora', 0) ";
-	$result = mysql_query($sql);
 
-
-    $sql3= "update usuario set Cita_Disponible=Cita_Disponible-1 where Nomina='$nomina'";
-    $result = mysql_query($sql3);
+    $fecha_aux = $fecha;
+    $fecha_aux = strtotime($fecha_aux);
+    $fecha_aux = date('Y-m-d', $fecha_aux);
+    for($i=0; $i < 9 ; $i++){
+        $sql = "INSERT INTO agenda ( Matricula_profe, Matricula_alumno, Fecha, Hora, Asistencia)
+        VALUES
+        ('$matricula_profe', '$nomina', '$fecha_aux', '$hora', 0) ";
+        $result = mysql_query($sql);
+        $fecha_aux = strtotime($fecha_aux);
+        $fecha_aux = strtotime("+14 day", $fecha_aux);
+        $fecha_aux = date('Y-m-d', $fecha_aux);
+    }
+	 $sql = "update usuario set Cita_Disponible= 0 where Nomina='$nomina'";
+    $result = mysql_query($sql);
 
 	echo "<script language=\"javascript\">
-					window.location.href = \"pantallaAgendarCita.php\"
+					window.location.href = \"pantallaTablaAgendarCita.php\"
 				</script>";
 
 	// A partir de aqui hay que eliminar las relaciones con las tablas de cursos

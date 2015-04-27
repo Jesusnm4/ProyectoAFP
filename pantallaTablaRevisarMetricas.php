@@ -88,16 +88,22 @@ include "./includes/sesionStaff.php";
                     <a href="pantallaCompletarInduccion.php">Completar Inducción de Alumnos</a>
                 </li>
                 <li>
-                    <a href="pantallaTablaRegistrarMetricas.php">Revisar Métricas</a>
+                    <a href="pantallaTablaRegistrarMetricas.php">Registrar Métricas</a>
                 </li>
                 <li>
                     <a href="pantallaTablaRevisarMetricas.php">Revisar Métricas</a>
+                </li>
+                 <li>
+                    <a href="pantallaTablaAgendarCita.php">Agendar Citas</a>
                 </li>
                 <li>
                     <a href="pantallaCalendarioCitas.php">Calendario Citas</a>
                 </li>
                 <li>
                     <a href="pantallaConfirmarAsistencia.php">Confirmar Asistencia</a>
+                </li>
+                <li>
+                    <a href="reporteAsistencias.php">Generar Reporte de Asistencias</a>
                 </li>
                 
                 <li>

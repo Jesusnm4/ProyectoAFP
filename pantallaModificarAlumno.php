@@ -208,7 +208,7 @@ while($row = mysql_fetch_array($result)){
               <div class="control-group" align="center">
                 <br>
                 <button type="submit" class="btn btn-success">Actualizar</button>
-                <a class="btn btn-default" href="pantallaIndexStaff.php" role="button">Cancelar</a>
+                <a class="btn btn-default" href="pantallaTablaModificarAlumnos.php" role="button">Cancelar</a>
               </div>
             </fieldset>
           </form>

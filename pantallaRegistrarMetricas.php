@@ -171,7 +171,7 @@ $date = date('Y-m-d');
               <div class="control-group" align="center">
                 <br>
                 <button type="submit" class="btn btn-success">Registrar</button>
-                <a class="btn btn-default" href="pantallaIndexStaff.php" role="button">Cancelar</a>
+                <a class="btn btn-default" href="pantallaTablaRegistrarMetricas.php" role="button">Cancelar</a>
               </div>
             </fieldset>
           </form>

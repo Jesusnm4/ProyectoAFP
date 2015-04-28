@@ -74,10 +74,4 @@ CREATE TABLE `agenda` (
 INSERT INTO `usuario` (`Nomina`, `Nombre`, `Password`, `Tipo`) VALUES
 ('ADMIN', 'Administrador', 'adminAFP', 'A');
 
-INSERT INTO `usuario` (`Nomina`, `Nombre`, `Password`, `Tipo`) VALUES
-('PROFE', 'Profesor', 'profeAFP', 'P');
-
-INSERT INTO `usuario` (`Nomina`, `Nombre`, `Password`, `Tipo`,`Profesor`,`Puede_Cita`,`Cita_Disponible`) VALUES
-('ESTUDIANTE', 'Estudiante', 'estudianteAFP', 'E', 'PROFE', 0, 1);
-
 

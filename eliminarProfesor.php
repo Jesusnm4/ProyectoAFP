@@ -8,13 +8,15 @@
 	if(isset($_GET['nomina'])){
 		$nomina=$_GET['nomina'];
 	}
-	
+
+    $sql = "DELETE FROM agenda WHERE Matricula_profe = '$nomina'";
+    $result = mysql_query($sql);
+
 	$sql = "DELETE FROM usuario WHERE Nomina = '$nomina'";
 	$result = mysql_query($sql);
 
 
-    $sql = "DELETE FROM agenda WHERE Matricula_profe = '$nomina'";
-    $result = mysql_query($sql);
+
 
 	echo "<script language=\"javascript\">
 					window.location.href = \"pantallaEliminarProfesor.php\"
